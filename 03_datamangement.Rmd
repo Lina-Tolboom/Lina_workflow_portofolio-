@@ -1,0 +1,30 @@
+---
+title: "03_datamanagement"
+author: "Lina Tolboom"
+date: "`r Sys.Date()`"
+output: html_document
+---
+# Data management RNA-seq
+
+Voor de RNA-sequencing formatieve opdracht uit de DAUR2 module heb ik een mapstructuur gemaakt volgens de Guerilla Analytics regels voor data management.
+
+## Mapstructuur
+
+```{r}
+library(fs)
+dir_tree("rnaseq_data_management")
+
+cat(readLines("rnaseq_data_management/docs/README.md"), sep = "\n")
+```
+
+# Data management
+
+Voor mijn portfolio repository heb ik de Guerilla Analytics principes toegepast. De bronbestanden voor de bookdown website staan in de hoofdmap, terwijl output en data in aparte submappen zijn georganiseerd.
+
+## Mapstructuur van de repository
+
+```{r}
+library(fs)
+dir_tree(".")
+cat(readLines("README.md"), sep = "\n")
+```

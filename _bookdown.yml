@@ -1,0 +1,16 @@
+book_filename: "Portofolio_workflows_Lina"
+delete_merged_file: true
+language: Dutch
+  ui:
+    chapter_name: "Hoofdstuk "
+rmd_files:
+  - "index.Rmd"
+  - "01-cv-toekomstplan.Rmd"
+  - "02-vrije-opdracht.Rmd"
+  - "03-data-management.Rmd"
+  - "04-reproducible-science.Rmd"
+  - "05-sql.Rmd"
+  - "06-r-package.Rmd"
+  - "07-projecticum-introductie.Rmd"
+  - "08-geparametrizeerde-rmarkdown.Rmd"
+  - "09-referenties.Rmd"
