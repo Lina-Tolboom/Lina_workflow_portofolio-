@@ -1,7 +1,8 @@
 bookdown::gitbook:
   split_by: chapter
+  toc_depth: 3
+  number_sections: false
   config:
     toc:
-      before: |
-        <li><a href="./">Portfolio Workflows</a></li>
-    sharing: null
+      collapse: none
+      scroll_highlight: true

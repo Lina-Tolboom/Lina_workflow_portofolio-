@@ -1,12 +1,11 @@
 ---
-title: "Portfolio Workflows"
+title: "Portfolio"
 author: "Lina Tolboom"
+date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-documentclass: book
-bibliography: references.bib
 ---
 
-**Welkom**
+# Welkom
 
 Welkom bij mijn portfolio. In dit portfolio zijn de verschillende opdrachten uitgewerkt. Het portfolio bevat onder andere uit mijn CV en toekomstplan, een vrije opdracht waarin ik ervoor heb gekozen om mij te verdiepen in Rshiny, een data management-opdracht, reproduceerbare analyses, een SQL-opdracht (die ik uiteindelijk niet heb hoeven maken omdat ik gelukkig de toets had gehaald). Ik heb een eigen R package gemaakt waarmee ik simpele korte zinnen en woorden tussen het Engels, Nederlands en Spaans kan laten vertalen. Ook is er een introductie van mijn Projecticum en een geparametrizeerd R Markdown-rapport.
 

@@ -1,15 +1,3 @@
----
-title: "Curriculum Vitae en toekomstplannen"
-author: "Lina Tolboom"
-  output:
-  html_document:
-    self_contained: true
-    theme: null
-    highlight: null
----
-
-Ik ben een gemotiveerde Life sciences student die zich aan het specialiseren is in Data science. Tijdens mijn opleiding heb ik heel veel ervaringen op gedaan, ik heb veel geleerd over processen in het menselijk lichaam. Ook heb ik heel wat labskills opgedaan waardoor ik goed snap welke resultaten er te verweken vallen als ik dit moet doen. Hier ben ik nu namelijk veel over aan het leren. R studio's is langzaam maar zeker een fijne werkomgeving aan het worden en ik snap hoe ik analyse moet uitvoeren en reproduceerbare rapportages moet maken. Ik werk erg nauwkeurig en leer snel.
-
 
 <style>
 body {
@@ -113,10 +101,12 @@ p, li {
 <div class="header-box">
 <div class="name-block">
 
-# Lina Tolboom
+# Opdracht 1: Cv en toekomstbeeld
 
 <p class="muted"><strong>Life Sciences student</strong> met interesse in <strong>Data Science for Biology</strong>, bioinformatica en biologische data-analyse.</p>
 
+</div>
+</div>
 
 
 ## Profiel
@@ -136,7 +126,8 @@ Minor gericht op ondernemerschap, initiatief nemen, samenwerken, communiceren en
 </div>
 
 <div class="entry">
-<div class="entry-head"><span class="entry-title">Internationale Business, HAN</span><span class="entry-date">2022 – 2023
+<div class="entry-head"><span class="entry-title">Internationale Business, HAN</span><span class="entry-date">2022 – 2023</span></div>
+Opleiding gevolgd voorafgaand aan Life Sciences.
 </div>
 
 <div class="entry">
@@ -222,16 +213,16 @@ Dit CV is gemaakt met **R Markdown**. Voor de opbouw is inspiratie gebruikt uit 
 
 
 
-**Toekomstplannen**
+## Toekomstplannen
 
-## 1. Waar zou je graag willen werken over 1 of 2 jaar? Hoe ziet jouw droombaan eruit?
+**1. Waar zou je graag willen werken over 1 of 2 jaar? Hoe ziet jouw droombaan eruit?**
 
 Antwoord: Over 1 a 2 jaar zou ik graag bij een life sciences consultant bedrijf willen werken. Hier wil ik ziekenhuizen en farmaciebedrijf helpen waardoor hun systemen verbeterd worden en mensen die hulp nodig hebben dit beter kunnen ontvangen. 
 
-## 2. Hoe sta je er nu voor om daadwerkelijk aan die droombaan te kunnen beginnen? Welke skills heb je al?
+**2. Hoe sta je er nu voor om daadwerkelijk aan die droombaan te kunnen beginnen? Welke skills heb je al?**
 
 Antwoord: Ik sta er enigzins prima voor maar ik heb nog wel veel te leren. Mijn vader is zelf ook consultant in de life science en door hem weet ik dat het heel fijn is dat ik zoveel processen over het menselijk lichaam ken en nu ik R studio aan het leren ben dat dat ook een goede skill is. 
 
-## 3. Welke skills zou je nog moeten of willen leren?
+**3. Welke skills zou je nog moeten of willen leren?**
 
 Antwoord: Ik zou nog aardig wat skill moeten leren, consultants moeten goed R studio kunnen gebruiken, dit gaat steeds beter maar ik ben nog niet op het juiste niveau, ook moet je goed statastiek kunnen verwerken en zal ik ook mijn presentatie skills nog wat moeten verbeteren, dit hoop ik dan ook te gaan doen tijdens mijn stage. 

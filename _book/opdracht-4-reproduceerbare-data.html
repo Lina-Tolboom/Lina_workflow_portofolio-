@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Opdracht 4: reproduceerbare data | Portfolio</title>
+  <meta name="description" content="Opdracht 4: reproduceerbare data | Portfolio" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Opdracht 4: reproduceerbare data | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Opdracht 4: reproduceerbare data | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="Lina Tolboom" />
+
+
+<meta name="date" content="2026-05-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="opdracht-3-data-management-rna-seq.html"/>
+<link rel="next" href="opdracht-5-sql.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welkom</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html"><i class="fa fa-check"></i>Opdracht 1: Cv en toekomstbeeld</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#profiel"><i class="fa fa-check"></i>Profiel</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#opleiding"><i class="fa fa-check"></i>Opleiding</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#werkervaring"><i class="fa fa-check"></i>Werkervaring</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#vaardigheden"><i class="fa fa-check"></i>Vaardigheden</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#credits"><i class="fa fa-check"></i>Credits</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#toekomstplannen"><i class="fa fa-check"></i>Toekomstplannen</a></li>
+<li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html"><i class="fa fa-check"></i>Opdracht 2: Vrije opdracht</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#in-dit-bestand-word-de-vrije-opdracht-gemaakt"><i class="fa fa-check"></i>in dit bestand word de vrije opdracht gemaakt</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html"><i class="fa fa-check"></i>Opdracht 3: Data management RNA-seq</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#mapstructuur"><i class="fa fa-check"></i>Mapstructuur</a></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#data-management"><i class="fa fa-check"></i>Data management</a></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#mapstructuur-van-de-repository"><i class="fa fa-check"></i>Mapstructuur van de repository</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html"><i class="fa fa-check"></i>Opdracht 4: reproduceerbare data</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#normalisatie-op-de-negatieve-controle"><i class="fa fa-check"></i>Normalisatie op de negatieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#controles-in-het-experiment"><i class="fa fa-check"></i>Controles in het experiment</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#negatieve-controle"><i class="fa fa-check"></i>Negatieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#positieve-controle"><i class="fa fa-check"></i>Positieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#vehicle-controle"><i class="fa fa-check"></i>Vehicle controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#nut-van-de-verschillende-controles"><i class="fa fa-check"></i>Nut van de verschillende controles</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#nut-van-de-normalisatie"><i class="fa fa-check"></i>Nut van de normalisatie</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stappenplan-voor-vervolgonderzoek"><i class="fa fa-check"></i>Stappenplan voor vervolgonderzoek</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-1-package-installeren-en-laden"><i class="fa fa-check"></i>Stap 1: package installeren en laden</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-2-data-selecteren-voor-%C3%A9%C3%A9n-chemicalie"><i class="fa fa-check"></i>Stap 2: data selecteren voor één chemicalie</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-3-model-fitten"><i class="fa fa-check"></i>Stap 3: model fitten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-4-model-samenvatten"><i class="fa fa-check"></i>Stap 4: model samenvatten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-5-dose-response-curve-plotten"><i class="fa fa-check"></i>Stap 5: dose-response curve plotten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-6-ic50-berekenen"><i class="fa fa-check"></i>Stap 6: IC50 berekenen</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-7-herhalen-voor-andere-chemicali%C3%ABn"><i class="fa fa-check"></i>Stap 7: herhalen voor andere chemicaliën</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#conclusie"><i class="fa fa-check"></i>Conclusie</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-5-sql.html"><a href="opdracht-5-sql.html"><i class="fa fa-check"></i>Opdracht 5: SQL</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-5-sql.html"><a href="opdracht-5-sql.html#sql-toets-gehaald-dus-geen-opdracht-hoeven-maken"><i class="fa fa-check"></i>SQL toets gehaald dus geen opdracht hoeven maken!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html"><i class="fa fa-check"></i>Opdracht 6: R package</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#hier-komt-mijn-r-package"><i class="fa fa-check"></i>Hier komt mijn R package</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html"><i class="fa fa-check"></i>Opdracht 7: Introductie projecticum</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html#hier-komt-mijn-introductie-van-het-project"><i class="fa fa-check"></i>Hier komt mijn introductie van het project</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html"><i class="fa fa-check"></i>Opdracht 8: Geparametrizeerde R markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#hier-komt-opdracht-8"><i class="fa fa-check"></i>hier komt opdracht 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="opdracht-4-reproduceerbare-data" class="section level1 hasAnchor">
+<h1>Opdracht 4: reproduceerbare data<a href="opdracht-4-reproduceerbare-data.html#opdracht-4-reproduceerbare-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In deze analyse wordt data onderzocht afkomstig van het HU lectoraat Innovative Testing in Life Sciences &amp; Chemistry. In het experiment zijn <em>C. elegans</em> blootgesteld aan verschillende concentraties van verschillende chemicaliën. Vervolgens is het aantal nakomelingen bepaald.
+Het doel van deze analyse is om de data reproduceerbaar te verwerken en te visualiseren in R.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="opdracht-4-reproduceerbare-data.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb11-2"><a href="opdracht-4-reproduceerbare-data.html#cb11-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-3"><a href="opdracht-4-reproduceerbare-data.html#cb11-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-4"><a href="opdracht-4-reproduceerbare-data.html#cb11-4" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="opdracht-4-reproduceerbare-data.html#cb12-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/celegans_data.csv&quot;</span>)</span></code></pre></div>
+<p>##controle
+Eerste controleren of data goed is ingelezen</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="opdracht-4-reproduceerbare-data.html#cb13-1" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##   plateRow plateColumn vialNr dropCode    expType expReplicate         expName    expDate
+## 1       NA          NA      1        a experiment            3 CE.LIQ.FLOW.062 2020-11-30
+## 2       NA          NA      1        b experiment            3 CE.LIQ.FLOW.062 2020-11-30
+## 3       NA          NA      1        c experiment            3 CE.LIQ.FLOW.062 2020-11-30
+## 4       NA          NA      1        d experiment            3 CE.LIQ.FLOW.062 2020-11-30
+## 5       NA          NA      1        e experiment            3 CE.LIQ.FLOW.062 2020-11-30
+## 6       NA          NA      2        a experiment            3 CE.LIQ.FLOW.062 2020-11-30
+##                     expResearcher expTime expUnit expVolumeCounted RawData  compCASRN
+## 1 Sergio Reijnders - Ellis Herder      68    hour               50      44 24157-81-1
+## 2 Sergio Reijnders - Ellis Herder      68    hour               50      37 24157-81-1
+## 3 Sergio Reijnders - Ellis Herder      68    hour               50      45 24157-81-1
+## 4 Sergio Reijnders - Ellis Herder      68    hour               50      47 24157-81-1
+## 5 Sergio Reijnders - Ellis Herder      68    hour               50      41 24157-81-1
+## 6 Sergio Reijnders - Ellis Herder      68    hour               50      35 24157-81-1
+##                     compName compConcentration compUnit compDelivery     compVehicle elegansStrain
+## 1 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+## 2 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+## 3 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+## 4 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+## 5 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+## 6 2,6-diisopropylnaphthalene              4.99       nM       Liquid controlVehicleA            N2
+##   elegansInput bacterialStrain bacterialTreatment bacterialOD600 bacterialConcX bacterialVolume
+## 1           25            OP50             heated          0.743              8             300
+## 2           25            OP50             heated          0.743              8             300
+## 3           25            OP50             heated          0.743              8             300
+## 4           25            OP50             heated          0.743              8             300
+## 5           25            OP50             heated          0.743              8             300
+## 6           25            OP50             heated          0.743              8             300
+##   bacterialVolUnit incubationVial incubationVolume incubationUnit incubationMethod incubationRPM
+## 1               ul 1,5 glass vial             1000             ul         rockroll            35
+## 2               ul 1,5 glass vial             1000             ul         rockroll            35
+## 3               ul 1,5 glass vial             1000             ul         rockroll            35
+## 4               ul 1,5 glass vial             1000             ul         rockroll            35
+## 5               ul 1,5 glass vial             1000             ul         rockroll            35
+## 6               ul 1,5 glass vial             1000             ul         rockroll            35
+##   bubble incubateTemperature
+## 1     NA                  20
+## 2     NA                  20
+## 3     NA                  20
+## 4     NA                  20
+## 5     NA                  20
+## 6     NA                  20</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="opdracht-4-reproduceerbare-data.html#cb15-1" tabindex="-1"></a><span class="fu">str</span>(data)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    25 obs. of  34 variables:
+##  $ plateRow           : logi  NA NA NA NA NA NA ...
+##  $ plateColumn        : logi  NA NA NA NA NA NA ...
+##  $ vialNr             : int  1 1 1 1 1 2 2 2 2 2 ...
+##  $ dropCode           : chr  &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; ...
+##  $ expType            : chr  &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; &quot;experiment&quot; ...
+##  $ expReplicate       : int  3 3 3 3 3 3 3 3 3 3 ...
+##  $ expName            : chr  &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; ...
+##  $ expDate            : chr  &quot;2020-11-30&quot; &quot;2020-11-30&quot; &quot;2020-11-30&quot; &quot;2020-11-30&quot; ...
+##  $ expResearcher      : chr  &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; ...
+##  $ expTime            : int  68 68 68 68 68 68 68 68 68 68 ...
+##  $ expUnit            : chr  &quot;hour&quot; &quot;hour&quot; &quot;hour&quot; &quot;hour&quot; ...
+##  $ expVolumeCounted   : int  50 50 50 50 50 50 50 50 50 50 ...
+##  $ RawData            : int  44 37 45 47 41 35 41 36 40 38 ...
+##  $ compCASRN          : chr  &quot;24157-81-1&quot; &quot;24157-81-1&quot; &quot;24157-81-1&quot; &quot;24157-81-1&quot; ...
+##  $ compName           : chr  &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; &quot;2,6-diisopropylnaphthalene&quot; ...
+##  $ compConcentration  : num  4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 ...
+##  $ compUnit           : chr  &quot;nM&quot; &quot;nM&quot; &quot;nM&quot; &quot;nM&quot; ...
+##  $ compDelivery       : chr  &quot;Liquid&quot; &quot;Liquid&quot; &quot;Liquid&quot; &quot;Liquid&quot; ...
+##  $ compVehicle        : chr  &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; ...
+##  $ elegansStrain      : chr  &quot;N2&quot; &quot;N2&quot; &quot;N2&quot; &quot;N2&quot; ...
+##  $ elegansInput       : int  25 25 25 25 25 25 25 25 25 25 ...
+##  $ bacterialStrain    : chr  &quot;OP50&quot; &quot;OP50&quot; &quot;OP50&quot; &quot;OP50&quot; ...
+##  $ bacterialTreatment : chr  &quot;heated&quot; &quot;heated&quot; &quot;heated&quot; &quot;heated&quot; ...
+##  $ bacterialOD600     : num  0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 ...
+##  $ bacterialConcX     : int  8 8 8 8 8 8 8 8 8 8 ...
+##  $ bacterialVolume    : int  300 300 300 300 300 300 300 300 300 300 ...
+##  $ bacterialVolUnit   : chr  &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; ...
+##  $ incubationVial     : chr  &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; ...
+##  $ incubationVolume   : int  1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...
+##  $ incubationUnit     : chr  &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; ...
+##  $ incubationMethod   : chr  &quot;rockroll&quot; &quot;rockroll&quot; &quot;rockroll&quot; &quot;rockroll&quot; ...
+##  $ incubationRPM      : int  35 35 35 35 35 35 35 35 35 35 ...
+##  $ bubble             : logi  NA NA NA NA NA NA ...
+##  $ incubateTemperature: int  20 20 20 20 20 20 20 20 20 20 ...</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="opdracht-4-reproduceerbare-data.html#cb17-1" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code></pre></div>
+<pre><code>##  plateRow       plateColumn        vialNr      dropCode           expType           expReplicate
+##  Mode:logical   Mode:logical   Min.   :1.0   Length:25          Length:25          Min.   :3    
+##  NA&#39;s:25        NA&#39;s:25        1st Qu.:1.0   Class :character   Class :character   1st Qu.:3    
+##                                Median :2.0   Mode  :character   Mode  :character   Median :3    
+##                                Mean   :1.8                                         Mean   :3    
+##                                3rd Qu.:2.0                                         3rd Qu.:3    
+##                                Max.   :3.0                                         Max.   :3    
+##    expName            expDate          expResearcher         expTime     expUnit         
+##  Length:25          Length:25          Length:25          Min.   :68   Length:25         
+##  Class :character   Class :character   Class :character   1st Qu.:68   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character   Median :68   Mode  :character  
+##                                                           Mean   :68                     
+##                                                           3rd Qu.:68                     
+##                                                           Max.   :68                     
+##  expVolumeCounted    RawData       compCASRN           compName         compConcentration
+##  Min.   :50       Min.   :16.00   Length:25          Length:25          Min.   :0.499    
+##  1st Qu.:50       1st Qu.:38.00   Class :character   Class :character   1st Qu.:0.499    
+##  Median :50       Median :41.00   Mode  :character   Mode  :character   Median :4.990    
+##  Mean   :50       Mean   :40.72                                         Mean   :3.194    
+##  3rd Qu.:50       3rd Qu.:44.00                                         3rd Qu.:4.990    
+##  Max.   :50       Max.   :50.00                                         Max.   :4.990    
+##    compUnit         compDelivery       compVehicle        elegansStrain       elegansInput
+##  Length:25          Length:25          Length:25          Length:25          Min.   :25   
+##  Class :character   Class :character   Class :character   Class :character   1st Qu.:25   
+##  Mode  :character   Mode  :character   Mode  :character   Mode  :character   Median :25   
+##                                                                              Mean   :25   
+##                                                                              3rd Qu.:25   
+##                                                                              Max.   :25   
+##  bacterialStrain    bacterialTreatment bacterialOD600  bacterialConcX bacterialVolume
+##  Length:25          Length:25          Min.   :0.743   Min.   :8      Min.   :300    
+##  Class :character   Class :character   1st Qu.:0.743   1st Qu.:8      1st Qu.:300    
+##  Mode  :character   Mode  :character   Median :0.743   Median :8      Median :300    
+##                                        Mean   :0.743   Mean   :8      Mean   :300    
+##                                        3rd Qu.:0.743   3rd Qu.:8      3rd Qu.:300    
+##                                        Max.   :0.743   Max.   :8      Max.   :300    
+##  bacterialVolUnit   incubationVial     incubationVolume incubationUnit     incubationMethod  
+##  Length:25          Length:25          Min.   :1000     Length:25          Length:25         
+##  Class :character   Class :character   1st Qu.:1000     Class :character   Class :character  
+##  Mode  :character   Mode  :character   Median :1000     Mode  :character   Mode  :character  
+##                                        Mean   :1000                                          
+##                                        3rd Qu.:1000                                          
+##                                        Max.   :1000                                          
+##  incubationRPM  bubble        incubateTemperature
+##  Min.   :35    Mode:logical   Min.   :20         
+##  1st Qu.:35    NA&#39;s:25        1st Qu.:20         
+##  Median :35                   Median :20         
+##  Mean   :35                   Mean   :20         
+##  3rd Qu.:35                   3rd Qu.:20         
+##  Max.   :35                   Max.   :20</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="opdracht-4-reproduceerbare-data.html#cb19-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="opdracht-4-reproduceerbare-data.html#cb19-2" tabindex="-1"></a>  <span class="fu">select</span>(RawData, compName, compConcentration, expType) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="opdracht-4-reproduceerbare-data.html#cb19-3" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code></pre></div>
+<pre><code>## Rows: 25
+## Columns: 4
+## $ RawData           [3m[38;5;246m&lt;int&gt;[39m[23m 44[38;5;246m, [39m37[38;5;246m, [39m45[38;5;246m, [39m47[38;5;246m, [39m41[38;5;246m, [39m35[38;5;246m, [39m41[38;5;246m, [39m36[38;5;246m, [39m40[38;5;246m, [39m38[38;5;246m, [39m44[38;5;246m, [39m48[38;5;246m, [39m43[38;5;246m, [39m50[38;5;246m, [39m16[38;5;246m, [39m48[38;5;246m, [39m42[38;5;246m, [39m41[38;5;246m,[39m…
+## $ compName          [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;2,6-diisopropylnaphthalene&quot;[38;5;246m, [39m&quot;2,6-diisopropylnaphthalene&quot;[38;5;246m, [39m&quot;2,6-diisop…
+## $ compConcentration [3m[38;5;246m&lt;dbl&gt;[39m[23m 4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4.990[38;5;246m, [39m4…
+## $ expType           [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;experiment&quot;[38;5;246m, [39m&quot;experiment&quot;[38;5;246m, [39m&quot;experiment&quot;[38;5;246m, [39m&quot;experiment&quot;[38;5;246m, [39m&quot;experiment&quot;[38;5;246m, [39m&quot;…</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="opdracht-4-reproduceerbare-data.html#cb21-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="opdracht-4-reproduceerbare-data.html#cb21-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-3"><a href="opdracht-4-reproduceerbare-data.html#cb21-3" tabindex="-1"></a>    <span class="at">RawData =</span> <span class="fu">as.numeric</span>(RawData),</span>
+<span id="cb21-4"><a href="opdracht-4-reproduceerbare-data.html#cb21-4" tabindex="-1"></a>    <span class="at">compName =</span> <span class="fu">as.factor</span>(compName),</span>
+<span id="cb21-5"><a href="opdracht-4-reproduceerbare-data.html#cb21-5" tabindex="-1"></a>    <span class="at">compConcentration =</span> <span class="fu">as.numeric</span>(compConcentration),</span>
+<span id="cb21-6"><a href="opdracht-4-reproduceerbare-data.html#cb21-6" tabindex="-1"></a>    <span class="at">expType =</span> <span class="fu">as.factor</span>(expType)</span>
+<span id="cb21-7"><a href="opdracht-4-reproduceerbare-data.html#cb21-7" tabindex="-1"></a>  )</span>
+<span id="cb21-8"><a href="opdracht-4-reproduceerbare-data.html#cb21-8" tabindex="-1"></a><span class="fu">str</span>(data)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    25 obs. of  34 variables:
+##  $ plateRow           : logi  NA NA NA NA NA NA ...
+##  $ plateColumn        : logi  NA NA NA NA NA NA ...
+##  $ vialNr             : int  1 1 1 1 1 2 2 2 2 2 ...
+##  $ dropCode           : chr  &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; ...
+##  $ expType            : Factor w/ 1 level &quot;experiment&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ expReplicate       : int  3 3 3 3 3 3 3 3 3 3 ...
+##  $ expName            : chr  &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; &quot;CE.LIQ.FLOW.062&quot; ...
+##  $ expDate            : chr  &quot;2020-11-30&quot; &quot;2020-11-30&quot; &quot;2020-11-30&quot; &quot;2020-11-30&quot; ...
+##  $ expResearcher      : chr  &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; &quot;Sergio Reijnders - Ellis Herder&quot; ...
+##  $ expTime            : int  68 68 68 68 68 68 68 68 68 68 ...
+##  $ expUnit            : chr  &quot;hour&quot; &quot;hour&quot; &quot;hour&quot; &quot;hour&quot; ...
+##  $ expVolumeCounted   : int  50 50 50 50 50 50 50 50 50 50 ...
+##  $ RawData            : num  44 37 45 47 41 35 41 36 40 38 ...
+##  $ compCASRN          : chr  &quot;24157-81-1&quot; &quot;24157-81-1&quot; &quot;24157-81-1&quot; &quot;24157-81-1&quot; ...
+##  $ compName           : Factor w/ 1 level &quot;2,6-diisopropylnaphthalene&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ compConcentration  : num  4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 4.99 ...
+##  $ compUnit           : chr  &quot;nM&quot; &quot;nM&quot; &quot;nM&quot; &quot;nM&quot; ...
+##  $ compDelivery       : chr  &quot;Liquid&quot; &quot;Liquid&quot; &quot;Liquid&quot; &quot;Liquid&quot; ...
+##  $ compVehicle        : chr  &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; &quot;controlVehicleA&quot; ...
+##  $ elegansStrain      : chr  &quot;N2&quot; &quot;N2&quot; &quot;N2&quot; &quot;N2&quot; ...
+##  $ elegansInput       : int  25 25 25 25 25 25 25 25 25 25 ...
+##  $ bacterialStrain    : chr  &quot;OP50&quot; &quot;OP50&quot; &quot;OP50&quot; &quot;OP50&quot; ...
+##  $ bacterialTreatment : chr  &quot;heated&quot; &quot;heated&quot; &quot;heated&quot; &quot;heated&quot; ...
+##  $ bacterialOD600     : num  0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 0.743 ...
+##  $ bacterialConcX     : int  8 8 8 8 8 8 8 8 8 8 ...
+##  $ bacterialVolume    : int  300 300 300 300 300 300 300 300 300 300 ...
+##  $ bacterialVolUnit   : chr  &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; ...
+##  $ incubationVial     : chr  &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; &quot;1,5 glass vial&quot; ...
+##  $ incubationVolume   : int  1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...
+##  $ incubationUnit     : chr  &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; &quot;ul&quot; ...
+##  $ incubationMethod   : chr  &quot;rockroll&quot; &quot;rockroll&quot; &quot;rockroll&quot; &quot;rockroll&quot; ...
+##  $ incubationRPM      : int  35 35 35 35 35 35 35 35 35 35 ...
+##  $ bubble             : logi  NA NA NA NA NA NA ...
+##  $ incubateTemperature: int  20 20 20 20 20 20 20 20 20 20 ...</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="opdracht-4-reproduceerbare-data.html#cb23-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData, <span class="at">color =</span> compName, <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="opdracht-4-reproduceerbare-data.html#cb23-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb23-3"><a href="opdracht-4-reproduceerbare-data.html#cb23-3" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb23-4"><a href="opdracht-4-reproduceerbare-data.html#cb23-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-5"><a href="opdracht-4-reproduceerbare-data.html#cb23-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Aantal nakomelingen per concentratie en chemicalie&quot;</span>,</span>
+<span id="cb23-6"><a href="opdracht-4-reproduceerbare-data.html#cb23-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10 schaal)&quot;</span>,</span>
+<span id="cb23-7"><a href="opdracht-4-reproduceerbare-data.html#cb23-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;RawData (aantal nakomelingen)&quot;</span>,</span>
+<span id="cb23-8"><a href="opdracht-4-reproduceerbare-data.html#cb23-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Chemicalie&quot;</span>,</span>
+<span id="cb23-9"><a href="opdracht-4-reproduceerbare-data.html#cb23-9" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;Experimenteel type&quot;</span></span>
+<span id="cb23-10"><a href="opdracht-4-reproduceerbare-data.html#cb23-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="opdracht-4-reproduceerbare-data.html#cb23-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-12"><a href="opdracht-4-reproduceerbare-data.html#cb23-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="portfolio_files/figure-html/unnamed-chunk-7-1.png" alt="" width="960" /></p>
+<p>Er is een log10-transformatie gebruikt op de x-as om verschillen in concentratie beter zichtbaar te maken. Daarnaast is jitter toegevoegd om te voorkomen dat punten exact over elkaar heen vallen.</p>
+<div id="normalisatie-op-de-negatieve-controle" class="section level2 hasAnchor">
+<h2>Normalisatie op de negatieve controle<a href="opdracht-4-reproduceerbare-data.html#normalisatie-op-de-negatieve-controle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Eerst bereken ik het gemiddelde van de negatieve controle.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="opdracht-4-reproduceerbare-data.html#cb24-1" tabindex="-1"></a>neg_control_mean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="opdracht-4-reproduceerbare-data.html#cb24-2" tabindex="-1"></a>  <span class="fu">filter</span>(expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="opdracht-4-reproduceerbare-data.html#cb24-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_neg =</span> <span class="fu">mean</span>(RawData, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="opdracht-4-reproduceerbare-data.html#cb24-4" tabindex="-1"></a>  <span class="fu">pull</span>(mean_neg)</span>
+<span id="cb24-5"><a href="opdracht-4-reproduceerbare-data.html#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="opdracht-4-reproduceerbare-data.html#cb24-6" tabindex="-1"></a>neg_control_mean</span></code></pre></div>
+<pre><code>## [1] NaN</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="opdracht-4-reproduceerbare-data.html#cb26-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="opdracht-4-reproduceerbare-data.html#cb26-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">RawData_norm =</span> RawData <span class="sc">/</span> neg_control_mean)</span>
+<span id="cb26-3"><a href="opdracht-4-reproduceerbare-data.html#cb26-3" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="opdracht-4-reproduceerbare-data.html#cb26-4" tabindex="-1"></a>  <span class="fu">filter</span>(expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="opdracht-4-reproduceerbare-data.html#cb26-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_normalized_negative =</span> <span class="fu">mean</span>(RawData_norm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>##   mean_normalized_negative
+## 1                      NaN</code></pre>
+<p>##Scatterplot met genormaliseerde waarde</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="opdracht-4-reproduceerbare-data.html#cb28-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData_norm, <span class="at">color =</span> compName, <span class="at">shape =</span> expType)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="opdracht-4-reproduceerbare-data.html#cb28-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="opdracht-4-reproduceerbare-data.html#cb28-3" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb28-4"><a href="opdracht-4-reproduceerbare-data.html#cb28-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-5"><a href="opdracht-4-reproduceerbare-data.html#cb28-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Genormaliseerd aantal nakomelingen per concentratie en chemicalie&quot;</span>,</span>
+<span id="cb28-6"><a href="opdracht-4-reproduceerbare-data.html#cb28-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Concentratie (log10 schaal)&quot;</span>,</span>
+<span id="cb28-7"><a href="opdracht-4-reproduceerbare-data.html#cb28-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Genormaliseerde RawData (fractie van negatieve controle)&quot;</span>,</span>
+<span id="cb28-8"><a href="opdracht-4-reproduceerbare-data.html#cb28-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Chemicalie&quot;</span>,</span>
+<span id="cb28-9"><a href="opdracht-4-reproduceerbare-data.html#cb28-9" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;Experimenteel type&quot;</span></span>
+<span id="cb28-10"><a href="opdracht-4-reproduceerbare-data.html#cb28-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-11"><a href="opdracht-4-reproduceerbare-data.html#cb28-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-12"><a href="opdracht-4-reproduceerbare-data.html#cb28-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## Warning: Removed 25 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="portfolio_files/figure-html/unnamed-chunk-10-1.png" alt="" width="960" /></p>
+</div>
+<div id="controles-in-het-experiment" class="section level2 hasAnchor">
+<h2>Controles in het experiment<a href="opdracht-4-reproduceerbare-data.html#controles-in-het-experiment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="negatieve-controle" class="section level2 hasAnchor">
+<h2>Negatieve controle<a href="opdracht-4-reproduceerbare-data.html#negatieve-controle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De negatieve controle is de conditie waarin geen toxisch effect wordt verwacht. In deze dataset is dat de <code>controlNegative</code>. Deze controle geeft het normale aantal nakomelingen weer onder standaardomstandigheden.</p>
+</div>
+<div id="positieve-controle" class="section level2 hasAnchor">
+<h2>Positieve controle<a href="opdracht-4-reproduceerbare-data.html#positieve-controle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De positieve controle is een conditie waarvan verwacht wordt dat deze duidelijk een effect veroorzaakt. Daarmee kan worden gecontroleerd of het experiment gevoelig genoeg is om een biologisch effect te detecteren.</p>
+</div>
+<div id="vehicle-controle" class="section level2 hasAnchor">
+<h2>Vehicle controle<a href="opdracht-4-reproduceerbare-data.html#vehicle-controle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De vehicle controle bevat alleen het oplosmiddel waarin een stof is opgelost, zonder de werkzame stof zelf. Hiermee kan worden nagegaan of het oplosmiddel zelf invloed heeft op het aantal nakomelingen.</p>
+</div>
+<div id="nut-van-de-verschillende-controles" class="section level2 hasAnchor">
+<h2>Nut van de verschillende controles<a href="opdracht-4-reproduceerbare-data.html#nut-van-de-verschillende-controles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De negatieve controle laat zien wat de normale baseline is zonder behandeling.</p>
+<p>De positieve controle laat zien of het experiment in staat is om een effect te detecteren.</p>
+<p>De vehicle controle laat zien of het oplosmiddel zelf een effect veroorzaakt. Dit is belangrijk, omdat anders een effect onterecht aan het chemicalie zou kunnen worden toegeschreven.</p>
+</div>
+<div id="nut-van-de-normalisatie" class="section level2 hasAnchor">
+<h2>Nut van de normalisatie<a href="opdracht-4-reproduceerbare-data.html#nut-van-de-normalisatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>De data zijn genormaliseerd ten opzichte van de negatieve controle, zodat de gemiddelde waarde van de negatieve controle gelijk wordt aan 1.</p>
+<p>Het voordeel hiervan is dat alle meetwaarden direct vergeleken kunnen worden met de baseline. Hierdoor wordt het eenvoudiger om te zien of een behandeling leidt tot minder of juist meer nakomelingen dan verwacht onder normale omstandigheden.</p>
+<p>Een waarde kleiner dan 1 betekent minder nakomelingen dan in de negatieve controle. Een waarde groter dan 1 betekent meer nakomelingen dan in de negatieve controle.</p>
+</div>
+<div id="stappenplan-voor-vervolgonderzoek" class="section level2 hasAnchor">
+<h2>Stappenplan voor vervolgonderzoek<a href="opdracht-4-reproduceerbare-data.html#stappenplan-voor-vervolgonderzoek" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Een logische vervolgstap voor dit type data is een dose-response analyse met een log-logistisch model om de IC50 te bepalen. Hiervoor kan in R het package <code>drc</code> gebruikt worden.</p>
+</div>
+<div id="stap-1-package-installeren-en-laden" class="section level2 hasAnchor">
+<h2>Stap 1: package installeren en laden<a href="opdracht-4-reproduceerbare-data.html#stap-1-package-installeren-en-laden" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="opdracht-4-reproduceerbare-data.html#cb30-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;drc&quot;</span>)</span>
+<span id="cb30-2"><a href="opdracht-4-reproduceerbare-data.html#cb30-2" tabindex="-1"></a><span class="fu">library</span>(drc)</span></code></pre></div>
+</div>
+<div id="stap-2-data-selecteren-voor-één-chemicalie" class="section level2 hasAnchor">
+<h2>Stap 2: data selecteren voor één chemicalie<a href="opdracht-4-reproduceerbare-data.html#stap-2-data-selecteren-voor-%C3%A9%C3%A9n-chemicalie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="opdracht-4-reproduceerbare-data.html#cb31-1" tabindex="-1"></a>chem_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="opdracht-4-reproduceerbare-data.html#cb31-2" tabindex="-1"></a>  <span class="fu">filter</span>(compName <span class="sc">==</span> <span class="st">&quot;naam_van_chemicalie&quot;</span>)</span></code></pre></div>
+</div>
+<div id="stap-3-model-fitten" class="section level2 hasAnchor">
+<h2>Stap 3: model fitten<a href="opdracht-4-reproduceerbare-data.html#stap-3-model-fitten" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="opdracht-4-reproduceerbare-data.html#cb32-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">drm</span>(RawData_norm <span class="sc">~</span> compConcentration, <span class="at">data =</span> chem_data, <span class="at">fct =</span> <span class="fu">LL.4</span>())</span></code></pre></div>
+</div>
+<div id="stap-4-model-samenvatten" class="section level2 hasAnchor">
+<h2>Stap 4: model samenvatten<a href="opdracht-4-reproduceerbare-data.html#stap-4-model-samenvatten" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="opdracht-4-reproduceerbare-data.html#cb33-1" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+</div>
+<div id="stap-5-dose-response-curve-plotten" class="section level2 hasAnchor">
+<h2>Stap 5: dose-response curve plotten<a href="opdracht-4-reproduceerbare-data.html#stap-5-dose-response-curve-plotten" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="opdracht-4-reproduceerbare-data.html#cb34-1" tabindex="-1"></a><span class="fu">plot</span>(model)</span>
+<span id="cb34-2"><a href="opdracht-4-reproduceerbare-data.html#cb34-2" tabindex="-1"></a><span class="fu">points</span>(chem_data<span class="sc">$</span>compConcentration, chem_data<span class="sc">$</span>RawData_norm)</span></code></pre></div>
+</div>
+<div id="stap-6-ic50-berekenen" class="section level2 hasAnchor">
+<h2>Stap 6: IC50 berekenen<a href="opdracht-4-reproduceerbare-data.html#stap-6-ic50-berekenen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="opdracht-4-reproduceerbare-data.html#cb35-1" tabindex="-1"></a><span class="fu">ED</span>(model, <span class="dv">50</span>, <span class="at">interval =</span> <span class="st">&quot;delta&quot;</span>)</span></code></pre></div>
+</div>
+<div id="stap-7-herhalen-voor-andere-chemicaliën" class="section level2 hasAnchor">
+<h2>Stap 7: herhalen voor andere chemicaliën<a href="opdracht-4-reproduceerbare-data.html#stap-7-herhalen-voor-andere-chemicali%C3%ABn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dezelfde stappen kunnen worden herhaald voor andere chemicaliën, zodat de IC50-waarden onderling vergeleken kunnen worden.</p>
+</div>
+<div id="conclusie" class="section level2 hasAnchor">
+<h2>Conclusie<a href="opdracht-4-reproduceerbare-data.html#conclusie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In deze analyse is de dataset ingelezen, gecontroleerd op correcte datatypes en gevisualiseerd met scatterplots. Daarna zijn de meetwaarden genormaliseerd ten opzichte van de negatieve controle, zodat de resultaten beter vergelijkbaar zijn.</p>
+<p>Een logische vervolgstap is het uitvoeren van een dose-response analyse met een log-logistisch model, waarmee per chemicalie een IC50 kan worden geschat.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="opdracht-3-data-management-rna-seq.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="opdracht-5-sql.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "none",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

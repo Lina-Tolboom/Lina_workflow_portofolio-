@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Opdracht 3: Data management RNA-seq | Portfolio</title>
+  <meta name="description" content="Opdracht 3: Data management RNA-seq | Portfolio" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Opdracht 3: Data management RNA-seq | Portfolio" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Opdracht 3: Data management RNA-seq | Portfolio" />
+  
+  
+  
+
+<meta name="author" content="Lina Tolboom" />
+
+
+<meta name="date" content="2026-05-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="opdracht-2-vrije-opdracht.html"/>
+<link rel="next" href="opdracht-4-reproduceerbare-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welkom</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html"><i class="fa fa-check"></i>Opdracht 1: Cv en toekomstbeeld</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#profiel"><i class="fa fa-check"></i>Profiel</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#opleiding"><i class="fa fa-check"></i>Opleiding</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#werkervaring"><i class="fa fa-check"></i>Werkervaring</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#vaardigheden"><i class="fa fa-check"></i>Vaardigheden</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#credits"><i class="fa fa-check"></i>Credits</a></li>
+<li class="chapter" data-level="" data-path="opdracht-1-cv-en-toekomstbeeld.html"><a href="opdracht-1-cv-en-toekomstbeeld.html#toekomstplannen"><i class="fa fa-check"></i>Toekomstplannen</a></li>
+<li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html"><i class="fa fa-check"></i>Opdracht 2: Vrije opdracht</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#in-dit-bestand-word-de-vrije-opdracht-gemaakt"><i class="fa fa-check"></i>in dit bestand word de vrije opdracht gemaakt</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html"><i class="fa fa-check"></i>Opdracht 3: Data management RNA-seq</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#mapstructuur"><i class="fa fa-check"></i>Mapstructuur</a></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#data-management"><i class="fa fa-check"></i>Data management</a></li>
+<li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html#mapstructuur-van-de-repository"><i class="fa fa-check"></i>Mapstructuur van de repository</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html"><i class="fa fa-check"></i>Opdracht 4: reproduceerbare data</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#normalisatie-op-de-negatieve-controle"><i class="fa fa-check"></i>Normalisatie op de negatieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#controles-in-het-experiment"><i class="fa fa-check"></i>Controles in het experiment</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#negatieve-controle"><i class="fa fa-check"></i>Negatieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#positieve-controle"><i class="fa fa-check"></i>Positieve controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#vehicle-controle"><i class="fa fa-check"></i>Vehicle controle</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#nut-van-de-verschillende-controles"><i class="fa fa-check"></i>Nut van de verschillende controles</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#nut-van-de-normalisatie"><i class="fa fa-check"></i>Nut van de normalisatie</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stappenplan-voor-vervolgonderzoek"><i class="fa fa-check"></i>Stappenplan voor vervolgonderzoek</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-1-package-installeren-en-laden"><i class="fa fa-check"></i>Stap 1: package installeren en laden</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-2-data-selecteren-voor-%C3%A9%C3%A9n-chemicalie"><i class="fa fa-check"></i>Stap 2: data selecteren voor één chemicalie</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-3-model-fitten"><i class="fa fa-check"></i>Stap 3: model fitten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-4-model-samenvatten"><i class="fa fa-check"></i>Stap 4: model samenvatten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-5-dose-response-curve-plotten"><i class="fa fa-check"></i>Stap 5: dose-response curve plotten</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-6-ic50-berekenen"><i class="fa fa-check"></i>Stap 6: IC50 berekenen</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#stap-7-herhalen-voor-andere-chemicali%C3%ABn"><i class="fa fa-check"></i>Stap 7: herhalen voor andere chemicaliën</a></li>
+<li class="chapter" data-level="" data-path="opdracht-4-reproduceerbare-data.html"><a href="opdracht-4-reproduceerbare-data.html#conclusie"><i class="fa fa-check"></i>Conclusie</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-5-sql.html"><a href="opdracht-5-sql.html"><i class="fa fa-check"></i>Opdracht 5: SQL</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-5-sql.html"><a href="opdracht-5-sql.html#sql-toets-gehaald-dus-geen-opdracht-hoeven-maken"><i class="fa fa-check"></i>SQL toets gehaald dus geen opdracht hoeven maken!</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html"><i class="fa fa-check"></i>Opdracht 6: R package</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#hier-komt-mijn-r-package"><i class="fa fa-check"></i>Hier komt mijn R package</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html"><i class="fa fa-check"></i>Opdracht 7: Introductie projecticum</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html#hier-komt-mijn-introductie-van-het-project"><i class="fa fa-check"></i>Hier komt mijn introductie van het project</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html"><i class="fa fa-check"></i>Opdracht 8: Geparametrizeerde R markdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#hier-komt-opdracht-8"><i class="fa fa-check"></i>hier komt opdracht 8</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Portfolio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="opdracht-3-data-management-rna-seq" class="section level1 hasAnchor">
+<h1>Opdracht 3: Data management RNA-seq<a href="opdracht-3-data-management-rna-seq.html#opdracht-3-data-management-rna-seq" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Voor de RNA-sequencing formatieve opdracht uit de DAUR2 module heb ik een mapstructuur gemaakt volgens de Guerilla Analytics regels voor data management.</p>
+<div id="mapstructuur" class="section level2 hasAnchor">
+<h2>Mapstructuur<a href="opdracht-3-data-management-rna-seq.html#mapstructuur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="opdracht-3-data-management-rna-seq.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
+<span id="cb1-2"><a href="opdracht-3-data-management-rna-seq.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="opdracht-3-data-management-rna-seq.html#cb1-3" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;data/rnaseq_data_management&quot;</span>)</span></code></pre></div>
+<pre><code>## data/rnaseq_data_management
+## ├── data
+## │   ├── counts
+## │   ├── processed
+## │   └── raw
+## ├── docs
+## │   └── README_opdracht03.md
+## ├── results
+## │   ├── SRR7866699_1_fastqc.html
+## │   ├── SRR7866699_2_fastqc.html
+## │   ├── SRR7866699_2_phred_score.png
+## │   ├── SRR7866700_1_fastqc.html
+## │   ├── SRR7866700_2_fastqc.html
+## │   ├── SRR7866701_1_fastqc.html
+## │   ├── SRR7866701_2_fastqc.html
+## │   ├── SRR7866702_1_fastqc.html
+## │   └── SRR7866702_2_fastqc.html
+## └── scripts
+##     └── fastq.sh</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="opdracht-3-data-management-rna-seq.html#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">readLines</span>(<span class="st">&quot;data/rnaseq_data_management/docs/README_opdracht03.md&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in readLines(&quot;data/rnaseq_data_management/docs/README_opdracht03.md&quot;): incomplete final
+## line found on &#39;data/rnaseq_data_management/docs/README_opdracht03.md&#39;</code></pre>
+<pre><code>## # README RNA-seq data management
+## 
+## Deze mapstructuur is gemaakt volgens de Guerilla Analytics principes voor data management voor 
+## de RNA-sequencing formatieve opdracht van de DAUR2 module.
+## 
+## ## Mapstructuur
+## 
+## - data/raw: bevat lege FASTQ-bestanden met dezelfde naam als de ruwe data
+## - data/processed: bevat lege BAM-bestanden met dezelfde naam als de verwerkte data
+## - data/counts: bevat het count-bestand
+## - scripts: bevat scripts die in de analyse worden gebruikt
+## - results: bevat outputbestanden zoals FastQC html-bestanden en afbeeldingen
+## - docs: bevat documentatie, waaronder deze README
+## 
+## ## Opmerking
+## 
+## De echte bestanden zijn niet van de server gedownload. 
+## In plaats daarvan zijn lege bestanden aangemaakt met dezelfde naam als de bestanden op de server, 
+## zoals gevraagd in de opdracht.</code></pre>
+</div>
+<div id="data-management" class="section level2 hasAnchor">
+<h2>Data management<a href="opdracht-3-data-management-rna-seq.html#data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Voor mijn portfolio repository heb ik de Guerilla Analytics principes toegepast. De bronbestanden voor de bookdown website staan in de hoofdmap, terwijl output en data in aparte submappen zijn georganiseerd.</p>
+</div>
+<div id="mapstructuur-van-de-repository" class="section level2 hasAnchor">
+<h2>Mapstructuur van de repository<a href="opdracht-3-data-management-rna-seq.html#mapstructuur-van-de-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="opdracht-3-data-management-rna-seq.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
+<span id="cb6-2"><a href="opdracht-3-data-management-rna-seq.html#cb6-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<pre><code>## .
+## ├── 01_cv_en_toekomstplannen.Rmd
+## ├── 02_vrije_opdracht.Rmd
+## ├── 03_datamanagement.Rmd
+## ├── 04_reproducible_science.Rmd
+## ├── 05_sql.Rmd
+## ├── 06_R_package.Rmd
+## ├── 07_Introductie_projecticum.Rmd
+## ├── 08_geparametrizeerde_Rmarkdown.Rmd
+## ├── 09_referenties.Rmd
+## ├── Lina_workflow_portofolio-.Rproj
+## ├── README.md
+## ├── _book
+## ├── _bookdown.yml
+## ├── _output.yml
+## ├── data
+## │   ├── celegans_data.csv
+## │   └── rnaseq_data_management
+## │       ├── data
+## │       │   ├── counts
+## │       │   ├── processed
+## │       │   └── raw
+## │       ├── docs
+## │       │   └── README_opdracht03.md
+## │       ├── results
+## │       │   ├── SRR7866699_1_fastqc.html
+## │       │   ├── SRR7866699_2_fastqc.html
+## │       │   ├── SRR7866699_2_phred_score.png
+## │       │   ├── SRR7866700_1_fastqc.html
+## │       │   ├── SRR7866700_2_fastqc.html
+## │       │   ├── SRR7866701_1_fastqc.html
+## │       │   ├── SRR7866701_2_fastqc.html
+## │       │   ├── SRR7866702_1_fastqc.html
+## │       │   └── SRR7866702_2_fastqc.html
+## │       └── scripts
+## │           └── fastq.sh
+## ├── docs
+## ├── index.Rmd
+## ├── portfolio.Rmd
+## ├── portfolio_files
+## │   └── figure-html
+## │       ├── unnamed-chunk-10-1.png
+## │       └── unnamed-chunk-7-1.png
+## ├── references.bib
+## └── results</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="opdracht-3-data-management-rna-seq.html#cb8-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">readLines</span>(<span class="st">&quot;README.md&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in readLines(&quot;README.md&quot;): incomplete final line found on &#39;README.md&#39;</code></pre>
+<pre><code>## # Lina_workflow_portofolio
+## Dit is het portofolio van Lina Tolboom
+## 
+## # Portfolio repository
+## 
+## Deze repository is georganiseerd volgens de Guerilla Analytics principes voor data management.
+## 
+## ## Structuur
+## 
+## - index.Rmd: startpagina van de portfolio website
+## - 01_cv_en_toekomstplannen.Rmd: CV pagina en toekomstbeeld
+## - 02_vrije_opdracht.Rmd: vrije opdracht beschreven
+## - 03_data_management.Rmd: pagina over data management
+## - 04_reproducible_science.Rmd: pagina over de reproduceerbare opdracht
+## - 05_sql.Rmd: Toets gehaald
+## - 06_R_package.Rmd: pagina over gemaakte R package
+## - 07_Introductie_projecticum.Rmd: een introductiepagina over het project dat ik ga doen
+## - 08_geparametrizeerde_Rmarkdown.Rmd: pagina over de parametrizeerende opdracht
+## - 09_referenties.Rmd: pagina voor de gebruikte referenties van pagina 7
+## - _bookdown.yml en _output.yml: configuratiebestanden voor bookdown
+## - _book/: gebouwde website output
+## - data/: data-gerelateerde mappen en bestanden
+## - results/: outputbestanden zoals html-bestanden
+## - docs/: documentatie
+## - README.md: beschrijving van de repository
+## 
+## ## Toelichting
+## 
+## De bookdown bronbestanden staan in de hoofdmap omdat bookdown deze daar nodig heeft. 
+## Outputbestanden zijn ondergebracht in de map `results`, en data-gerelateerde bestanden in de map `data`.</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="opdracht-2-vrije-opdracht.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="opdracht-4-reproduceerbare-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "none",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
