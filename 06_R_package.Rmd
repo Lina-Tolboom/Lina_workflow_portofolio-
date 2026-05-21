@@ -1,3 +1,36 @@
-# Opdracht 6: R package
+# Opdracht 6: R package 
 
-## Hier komt mijn R package
+Voor deze opdracht heb ik een eigen R package gemaakt: **simpleTranslate**. Hiermee kunnen er woorden en simpele korte zinnen worden vertaald tussen het Engels, Spaans en Nederlands. Ik heb hiervoor gekozen omdat ik mijn stage in Spanje wil gaan doen dus leek mij dit leuk om te maken. 
+
+## Doel van de package
+
+De package **simpleTranslate** is gemaakt om een simpele vertaalfunctie tussen het Engels, Spaans en Nederlands beschikbaar te maken binnen R. 
+
+## Opbouw van de package
+
+De package staat in dezelfde GitHub repository als mijn portfolio, in de map `simpleTranslate`. De package bestaat onder andere uit een `DESCRIPTION`-bestand, een `NAMESPACE`-bestand, een `R/`-map met de functie `simpleTranslate.R` en documentatie in de map `man/`.
+
+## Installatie via GitHub
+
+Omdat de package in een submap van mijn portfolio-repository staat, kan deze geïnstalleerd worden met `subdir = "simpleTranslate"`:
+
+```{r, eval=FALSE}
+devtools::install_github("Lina-Tolboom/Lina_workflow_portofolio-", subdir = "simpleTranslate")
+```
+
+Na installatie kan de package geladen worden met:
+
+```{r, eval=FALSE}
+library(simpleTranslate)
+```
+
+## Voorbeeld van gebruik
+
+Een voorbeeld van het gebruik van de functie is:
+
+```{r, eval=FALSE}
+translate_word("hond", from = "nl", to = "en")
+```
+
+De functie geeft daarna een vertaling terug. Hiermee laat de package zien hoe een eigen functie binnen R via een package beschikbaar gemaakt kan worden.
+
