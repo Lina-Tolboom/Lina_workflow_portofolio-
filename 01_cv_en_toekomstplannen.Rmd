@@ -1,0 +1,237 @@
+---
+title: "Curriculum Vitae en toekomstplannen"
+author: "Lina Tolboom"
+  output:
+  html_document:
+    self_contained: true
+    theme: null
+    highlight: null
+---
+
+Ik ben een gemotiveerde Life sciences student die zich aan het specialiseren is in Data science. Tijdens mijn opleiding heb ik heel veel ervaringen op gedaan, ik heb veel geleerd over processen in het menselijk lichaam. Ook heb ik heel wat labskills opgedaan waardoor ik goed snap welke resultaten er te verweken vallen als ik dit moet doen. Hier ben ik nu namelijk veel over aan het leren. R studio's is langzaam maar zeker een fijne werkomgeving aan het worden en ik snap hoe ik analyse moet uitvoeren en reproduceerbare rapportages moet maken. Ik werk erg nauwkeurig en leer snel.
+
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2937;
+  line-height: 1.45;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 4px;
+  color: #0f172a;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  color: #0f172a;
+  border-bottom: 2px solid #d1d5db;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 15px;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+p, li {
+  font-size: 14px;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.name-block {
+  flex: 2;
+}
+
+
+
+.muted {
+  color: #4b5563;
+}
+
+.entry {
+  margin-bottom: 16px;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: baseline;
+}
+
+.entry-title {
+  font-weight: 700;
+}
+
+.entry-date {
+  white-space: nowrap;
+  color: #374151;
+  font-size: 13px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.taglist {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  padding-left: 18px;
+}
+
+.small {
+  font-size: 12px;
+  color: #4b5563;
+}
+
+@media print {
+  body { padding: 10px; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+
+<div class="header-box">
+<div class="name-block">
+
+# Lina Tolboom
+
+<p class="muted"><strong>Life Sciences student</strong> met interesse in <strong>Data Science for Biology</strong>, bioinformatica en biologische data-analyse.</p>
+
+
+
+## Profiel
+
+Gemotiveerde student **Life Sciences** met een groeiende specialisatie in **Data Science for Biology**. Tijdens mijn opleiding heb ik ervaring opgedaan met het analyseren, opschonen en visualiseren van biologische data in **R** en met het maken van reproduceerbare rapportages in **R Markdown**. Ik werk nauwkeurig, leer snel en vind het interessant om biologische onderzoeksvragen te vertalen naar een heldere data-analyse. Ik ben op zoek naar een stageplek of startersfunctie waarin ik mijn analytische vaardigheden en mijn interesse in life sciences verder kan ontwikkelen.
+
+## Opleiding
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Life Sciences, Hogeschool Utrecht</span><span class="entry-date">2023 – heden</span></div>
+Opleiding met focus op biologische processen, laboratoriumvaardigheden, onderzoeksopzet en data-analyse. Binnen de opleiding ervaring opgedaan met statistiek, biologische datasets en Data Science for Biology.
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Minor Entrepreneurship, Hogeschool Utrecht</span><span class="entry-date">2025 – 2026</span></div>
+Minor gericht op ondernemerschap, initiatief nemen, samenwerken, communiceren en professioneel handelen.
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Internationale Business, HAN</span><span class="entry-date">2022 – 2023
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">HAVO, Amersfoortse Berg</span><span class="entry-date">2017 – 2021</span></div>
+Afgerond ter voorbereiding op het hoger onderwijs.
+</div>
+
+## Werkervaring
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Huishoudelijke hulp, T-zorg Utrecht</span><span class="entry-date">2025 – heden</span></div>
+Ondersteunen van ouderen zodat zij zelfstandig thuis kunnen blijven wonen. Hierbij staan betrouwbaarheid, communicatie en zorgvuldig werken centraal.
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Hostess, Verzorgingshuis Lichtenberg</span><span class="entry-date">2023 – 2025</span></div>
+Gastvrije ondersteuning binnen een zorgomgeving. Ervaring opgedaan in klantgericht werken, omgaan met verschillende mensen en professioneel handelen.
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Vrijwilligerswerk, Nijenstede</span><span class="entry-date">2022 – 2023</span></div>
+Ondersteuning bij dagactiviteiten voor ouderen, onder andere met zang en sociale begeleiding.
+</div>
+
+<div class="entry">
+<div class="entry-head"><span class="entry-title">Medewerker bakkerij, Albert Heijn</span><span class="entry-date">2019 – 2023</span></div>
+Ervaring opgedaan met samenwerken, nauwkeurig werken, verantwoordelijkheid nemen en werken in een dynamische omgeving.
+</div>
+
+
+## Vaardigheden
+
+<div class="grid-2">
+<div>
+
+### Data Science for Biology
+
+- Data-analyse van biologische datasets in **R**
+- Data opschonen, structureren en samenvatten
+- Reproduceerbare rapportages maken in **R Markdown**
+- Basiskennis van statistische analyse
+- Interpreteren van biologische data in onderzoekscontext
+- Basiservaring met omics- en genexpressiedata uit onderwijsprojecten
+
+### Digitale skills
+
+- **R**
+- **RStudio**
+- **R Markdown**
+- **Excel**
+- **Word**
+- **PowerPoint**
+
+</div>
+<div>
+
+### Professionele skills
+
+- Analytisch denken
+- Nauwkeurig werken
+- Zelfstandig werken
+- Samenwerken
+- Communicatieve vaardigheden
+- Plannen en organiseren
+- Verantwoordelijkheidsgevoel
+- Servicegericht handelen
+
+### Talen
+
+- Nederlands — moedertaal
+- Engels — goed
+
+
+
+</div>
+</div>
+
+
+## Credits
+
+Dit CV is gemaakt met **R Markdown**. Voor de opbouw is inspiratie gebruikt uit online CV-templates voor **R Markdown**, in het bijzonder het pakket **vitae** van Mitchell O'Hara-Wild en Rob Hyndman en de daar beschikbare professionele CV-stijlen. De visuele structuur van deze versie is vereenvoudigd om technische problemen met LaTeX te vermijden.
+
+
+
+
+**Toekomstplannen**
+
+## 1. Waar zou je graag willen werken over 1 of 2 jaar? Hoe ziet jouw droombaan eruit?
+
+Antwoord: Over 1 a 2 jaar zou ik graag bij een life sciences consultant bedrijf willen werken. Hier wil ik ziekenhuizen en farmaciebedrijf helpen waardoor hun systemen verbeterd worden en mensen die hulp nodig hebben dit beter kunnen ontvangen. 
+
+## 2. Hoe sta je er nu voor om daadwerkelijk aan die droombaan te kunnen beginnen? Welke skills heb je al?
+
+Antwoord: Ik sta er enigzins prima voor maar ik heb nog wel veel te leren. Mijn vader is zelf ook consultant in de life science en door hem weet ik dat het heel fijn is dat ik zoveel processen over het menselijk lichaam ken en nu ik R studio aan het leren ben dat dat ook een goede skill is. 
+
+## 3. Welke skills zou je nog moeten of willen leren?
+
+Antwoord: Ik zou nog aardig wat skill moeten leren, consultants moeten goed R studio kunnen gebruiken, dit gaat steeds beter maar ik ben nog niet op het juiste niveau, ook moet je goed statastiek kunnen verwerken en zal ik ook mijn presentatie skills nog wat moeten verbeteren, dit hoop ik dan ook te gaan doen tijdens mijn stage. 
