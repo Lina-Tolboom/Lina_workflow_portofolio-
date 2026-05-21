@@ -16,7 +16,6 @@ Deze repository is georganiseerd volgens de Guerilla Analytics principes voor da
 - 06_R_package.Rmd: pagina over gemaakte R package
 - 07_Introductie_projecticum.Rmd: een introductiepagina over het project dat ik ga doen
 - 08_geparametrizeerde_Rmarkdown.Rmd: pagina over de parametrizeerende opdracht
-- 09_referenties.Rmd: pagina voor de gebruikte referenties van pagina 7
 - _bookdown.yml en _output.yml: configuratiebestanden voor bookdown
 - _book/: gebouwde website output
 - data/: data-gerelateerde mappen en bestanden
