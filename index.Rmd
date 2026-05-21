@@ -3,6 +3,7 @@ title: "Portfolio"
 author: "Lina Tolboom"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+bibliography: references.bib
 ---
 
 # Welkom

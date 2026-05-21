@@ -1,4 +1,15 @@
 # Opdracht 7: Introductie projecticum
 
-## Hier komt mijn introductie van het project
+Tijdens het projecticum wordt gewerkt aan een geautomatiseerde analysepijplijn voor RNA-sequencingdata. RNA-seq is een techniek waarmee onderzocht kan worden welke genen actief zijn in cellen of weefsels. Door RNA om te zetten naar sequencingdata kan met bio-informatica worden bepaald welke genen tot expressie komen en of er verschillen zijn tussen bijvoorbeeld cellijnen, kweeksystemen of behandelingen [@wang2009; @stark2019].
 
+Tijdens de specialisatie hebben we eerder al kennisgemaakt met de data-analyseworkflow voor RNA-seq. Daarbij werden verschillende experimenten geanalyseerd, waarbij onderdelen van de code handmatig aangepast moesten worden. Dit kost veel tijd.Daarom is het handig om te onderzoeken of een analyseworkflow makkelijker en reproduceerbaarder gemaakt kan worden met behulp van een geautomatiseerde analysepipeline.
+
+In het Lectoraat Innovative Testing in Life Sciences & Chemistry zijn verschillende RNA-sequencingdatasets beschikbaar van verschillende cellijnen, kweeksystemen en behandelingen. Hierdoor is er behoefte aan een pipeline waarmee verschillende condities eenvoudig met elkaar vergeleken kunnen worden. Een geautomatiseerde RNA-seq-pipeline kan helpen om analyses consistenter uit te voeren en om verschillen tussen datasets op een reproduceerbare manier te onderzoeken [@conesa2016].
+
+Een RNA-seq-analyse bestaat meestal uit meerdere stappen. Eerst wordt de kwaliteit van de ruwe sequencingdata gecontroleerd. Daarna worden reads gekoppeld aan een referentiegenoom of transcriptome, of worden transcripten direct gekwantificeerd. Vervolgens worden counts of geschatte expressiewaarden gebruikt voor verdere analyse, zoals differentiële genexpressieanalyse. Hierbij wordt onderzocht welke genen significant hoger of lager tot expressie komen tussen verschillende condities [@conesa2016]. Tools zoals kallisto kunnen gebruikt worden voor snelle transcriptkwantificatie [@bray2016], terwijl pakketten zoals DESeq2 veel worden gebruikt voor statistische analyse van countdata [@love2014].
+
+Het doel van dit projecticum is om een bestaande eerste versie van een RNA-seq-analysepipeline te testen, valideren en verder te verbeteren. Hierbij wordt gekeken of de pipeline reproduceerbare resultaten oplevert als deze wordt toegepast op de gegeven datasets. Daarnaast worden onderdelen van de analyse handmatig uitgewerkt, zodat de resultaten kunnen worden vergeleken met de output van de pipeline Op basis van deze vergelijking kunnen verbeterpunten worden vastgesteld en is er een validatieproces.
+
+
+## Referenties
+<div id="refs"></div>

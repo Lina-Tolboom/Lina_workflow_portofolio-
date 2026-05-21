@@ -124,6 +124,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -180,17 +203,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html"><i class="fa fa-check"></i>Opdracht 6: R package</a>
 <ul>
-<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#hier-komt-mijn-r-package"><i class="fa fa-check"></i>Hier komt mijn R package</a></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#doel-van-de-package"><i class="fa fa-check"></i>Doel van de package</a></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#opbouw-van-de-package"><i class="fa fa-check"></i>Opbouw van de package</a></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#installatie-via-github"><i class="fa fa-check"></i>Installatie via GitHub</a></li>
+<li class="chapter" data-level="" data-path="opdracht-6-r-package.html"><a href="opdracht-6-r-package.html#voorbeeld-van-gebruik"><i class="fa fa-check"></i>Voorbeeld van gebruik</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html"><i class="fa fa-check"></i>Opdracht 7: Introductie projecticum</a>
 <ul>
-<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html#hier-komt-mijn-introductie-van-het-project"><i class="fa fa-check"></i>Hier komt mijn introductie van het project</a></li>
+<li class="chapter" data-level="" data-path="opdracht-7-introductie-projecticum.html"><a href="opdracht-7-introductie-projecticum.html#referenties"><i class="fa fa-check"></i>Referenties</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html"><i class="fa fa-check"></i>Opdracht 8: Geparametrizeerde R markdown</a>
 <ul>
 <li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#hier-komt-opdracht-8"><i class="fa fa-check"></i>hier komt opdracht 8</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
 </ul>
 
       </nav>
@@ -210,8 +235,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="opdracht-7-introductie-projecticum" class="section level1 hasAnchor">
 <h1>Opdracht 7: Introductie projecticum<a href="opdracht-7-introductie-projecticum.html#opdracht-7-introductie-projecticum" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="hier-komt-mijn-introductie-van-het-project" class="section level2 hasAnchor">
-<h2>Hier komt mijn introductie van het project<a href="opdracht-7-introductie-projecticum.html#hier-komt-mijn-introductie-van-het-project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tijdens het projecticum wordt gewerkt aan een geautomatiseerde analysepijplijn voor RNA-sequencingdata. RNA-seq is een techniek waarmee onderzocht kan worden welke genen actief zijn in cellen of weefsels. Door RNA om te zetten naar sequencingdata kan met bio-informatica worden bepaald welke genen tot expressie komen en of er verschillen zijn tussen bijvoorbeeld cellijnen, kweeksystemen of behandelingen <span class="citation">(Wang, Gerstein, and Snyder 2009; Stark, Grzelak, and Hadfield 2019)</span>.</p>
+<p>Tijdens de specialisatie hebben we eerder al kennisgemaakt met de data-analyseworkflow voor RNA-seq. Daarbij werden verschillende experimenten geanalyseerd, waarbij onderdelen van de code handmatig aangepast moesten worden. Dit kost veel tijd.Daarom is het handig om te onderzoeken of een analyseworkflow makkelijker en reproduceerbaarder gemaakt kan worden met behulp van een geautomatiseerde analysepipeline.</p>
+<p>In het Lectoraat Innovative Testing in Life Sciences &amp; Chemistry zijn verschillende RNA-sequencingdatasets beschikbaar van verschillende cellijnen, kweeksystemen en behandelingen. Hierdoor is er behoefte aan een pipeline waarmee verschillende condities eenvoudig met elkaar vergeleken kunnen worden. Een geautomatiseerde RNA-seq-pipeline kan helpen om analyses consistenter uit te voeren en om verschillen tussen datasets op een reproduceerbare manier te onderzoeken <span class="citation">(Conesa et al. 2016)</span>.</p>
+<p>Een RNA-seq-analyse bestaat meestal uit meerdere stappen. Eerst wordt de kwaliteit van de ruwe sequencingdata gecontroleerd. Daarna worden reads gekoppeld aan een referentiegenoom of transcriptome, of worden transcripten direct gekwantificeerd. Vervolgens worden counts of geschatte expressiewaarden gebruikt voor verdere analyse, zoals differentiële genexpressieanalyse. Hierbij wordt onderzocht welke genen significant hoger of lager tot expressie komen tussen verschillende condities <span class="citation">(Conesa et al. 2016)</span>. Tools zoals kallisto kunnen gebruikt worden voor snelle transcriptkwantificatie <span class="citation">(Bray et al. 2016)</span>, terwijl pakketten zoals DESeq2 veel worden gebruikt voor statistische analyse van countdata <span class="citation">(Love, Huber, and Anders 2014)</span>.</p>
+<p>Het doel van dit projecticum is om een bestaande eerste versie van een RNA-seq-analysepipeline te testen, valideren en verder te verbeteren. Hierbij wordt gekeken of de pipeline reproduceerbare resultaten oplevert als deze wordt toegepast op de gegeven datasets. Daarnaast worden onderdelen van de analyse handmatig uitgewerkt, zodat de resultaten kunnen worden vergeleken met de output van de pipeline Op basis van deze vergelijking kunnen verbeterpunten worden vastgesteld en is er een validatieproces.</p>
+<div id="referenties" class="section level2 hasAnchor">
+<h2>Referenties<a href="opdracht-7-introductie-projecticum.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div class="csl-entry">
+Bray, Nicolas L., Harold Pimentel, Páll Melsted, and Lior Pachter. 2016. <span>“Near-Optimal Probabilistic RNA-Seq Quantification.”</span> <em>Nature Biotechnology</em> 34 (5): 525–27. <a href="https://doi.org/10.1038/nbt.3519">https://doi.org/10.1038/nbt.3519</a>.
+</div>
+<div class="csl-entry">
+Conesa, Ana, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał W. Szcześniak, et al. 2016. <span>“A Survey of Best Practices for RNA-Seq Data Analysis.”</span> <em>Genome Biology</em> 17: 13. <a href="https://doi.org/10.1186/s13059-016-0881-8">https://doi.org/10.1186/s13059-016-0881-8</a>.
+</div>
+<div class="csl-entry">
+Love, Michael I., Wolfgang Huber, and Simon Anders. 2014. <span>“Moderated Estimation of Fold Change and Dispersion for RNA-Seq Data with DESeq2.”</span> <em>Genome Biology</em> 15: 550. <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a>.
+</div>
+<div class="csl-entry">
+Stark, Rory, Marta Grzelak, and James Hadfield. 2019. <span>“RNA Sequencing: The Teenage Years.”</span> <em>Nature Reviews Genetics</em> 20: 631–56. <a href="https://doi.org/10.1038/s41576-019-0150-2">https://doi.org/10.1038/s41576-019-0150-2</a>.
+</div>
+<div class="csl-entry">
+Wang, Zhong, Mark Gerstein, and Michael Snyder. 2009. <span>“RNA-Seq: A Revolutionary Tool for Transcriptomics.”</span> <em>Nature Reviews Genetics</em> 10 (1): 57–63. <a href="https://doi.org/10.1038/nrg2484">https://doi.org/10.1038/nrg2484</a>.
+</div>
+</div>
 
 </div>
 </div>
