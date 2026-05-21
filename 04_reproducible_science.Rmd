@@ -5,26 +5,177 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Inleiding
+In deze analyse wordt data onderzocht afkomstig van het HU lectoraat Innovative Testing in Life Sciences & Chemistry. In het experiment zijn *C. elegans* blootgesteld aan verschillende concentraties van verschillende chemicaliën. Vervolgens is het aantal nakomelingen bepaald.
+Het doel van deze analyse is om de data reproduceerbaar te verwerken en te visualiseren in R.
+
+```{r message=FALSE, warning=FALSE}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(forcats)
 ```
 
-## R Markdown
+```{r}
+data <- read.csv("data/celegans_data.csv")
+```
+#controle
+Eerste controleren of data goed is ingelezen
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+head(data)
+str(data)
+summary(data)
+data %>%
+  select(RawData, compName, compConcentration, expType) %>%
+  glimpse()
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+data <- data %>%
+  mutate(
+    RawData = as.numeric(RawData),
+    compName = as.factor(compName),
+    compConcentration = as.numeric(compConcentration),
+    expType = as.factor(expType)
+  )
+str(data)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r fig.width=10, fig.height=6}
+ggplot(data, aes(x = compConcentration, y = RawData, color = compName, shape = expType)) +
+  geom_jitter(width = 0.05, height = 0, alpha = 0.8, size = 2.5) +
+  scale_x_log10() +
+  labs(
+    title = "Aantal nakomelingen per concentratie en chemicalie",
+    x = "Concentratie (log10 schaal)",
+    y = "RawData (aantal nakomelingen)",
+    color = "Chemicalie",
+    shape = "Experimenteel type"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+Er is een log10-transformatie gebruikt op de x-as om verschillen in concentratie beter zichtbaar te maken. Daarnaast is jitter toegevoegd om te voorkomen dat punten exact over elkaar heen vallen.
+
+# Normalisatie op de negatieve controle
+
+Eerst bereken ik het gemiddelde van de negatieve controle.
+
+```{r}
+neg_control_mean <- data %>%
+  filter(expType == "controlNegative") %>%
+  summarise(mean_neg = mean(RawData, na.rm = TRUE)) %>%
+  pull(mean_neg)
+
+neg_control_mean
+```
+
+```{r}
+data <- data %>%
+  mutate(RawData_norm = RawData / neg_control_mean)
+data %>%
+  filter(expType == "controlNegative") %>%
+  summarise(mean_normalized_negative = mean(RawData_norm, na.rm = TRUE))
+```
+
+#Scatterplot met genormaliseerde waarde
+```{r fig.width=10, fig.height=6}
+ggplot(data, aes(x = compConcentration, y = RawData_norm, color = compName, shape = expType)) +
+  geom_jitter(width = 0.05, height = 0, alpha = 0.8, size = 2.5) +
+  scale_x_log10() +
+  labs(
+    title = "Genormaliseerd aantal nakomelingen per concentratie en chemicalie",
+    x = "Concentratie (log10 schaal)",
+    y = "Genormaliseerde RawData (fractie van negatieve controle)",
+    color = "Chemicalie",
+    shape = "Experimenteel type"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+# Controles in het experiment
+
+## Negatieve controle
+
+De negatieve controle is de conditie waarin geen toxisch effect wordt verwacht. In deze dataset is dat de `controlNegative`. Deze controle geeft het normale aantal nakomelingen weer onder standaardomstandigheden.
+
+## Positieve controle
+
+De positieve controle is een conditie waarvan verwacht wordt dat deze duidelijk een effect veroorzaakt. Daarmee kan worden gecontroleerd of het experiment gevoelig genoeg is om een biologisch effect te detecteren.
+
+## Vehicle controle
+
+De vehicle controle bevat alleen het oplosmiddel waarin een stof is opgelost, zonder de werkzame stof zelf. Hiermee kan worden nagegaan of het oplosmiddel zelf invloed heeft op het aantal nakomelingen.
+
+# Nut van de verschillende controles
+
+De negatieve controle laat zien wat de normale baseline is zonder behandeling.
+
+De positieve controle laat zien of het experiment in staat is om een effect te detecteren.
+
+De vehicle controle laat zien of het oplosmiddel zelf een effect veroorzaakt. Dit is belangrijk, omdat anders een effect onterecht aan het chemicalie zou kunnen worden toegeschreven.
+
+# Nut van de normalisatie
+
+De data zijn genormaliseerd ten opzichte van de negatieve controle, zodat de gemiddelde waarde van de negatieve controle gelijk wordt aan 1.
+
+Het voordeel hiervan is dat alle meetwaarden direct vergeleken kunnen worden met de baseline. Hierdoor wordt het eenvoudiger om te zien of een behandeling leidt tot minder of juist meer nakomelingen dan verwacht onder normale omstandigheden.
+
+Een waarde kleiner dan 1 betekent minder nakomelingen dan in de negatieve controle. Een waarde groter dan 1 betekent meer nakomelingen dan in de negatieve controle.
+
+# Stappenplan voor vervolgonderzoek
+
+Een logische vervolgstap voor dit type data is een dose-response analyse met een log-logistisch model om de IC50 te bepalen. Hiervoor kan in R het package `drc` gebruikt worden.
+
+## Stap 1: package installeren en laden
+
+```{r eval=FALSE}
+install.packages("drc")
+library(drc)
+```
+
+## Stap 2: data selecteren voor één chemicalie
+
+```{r eval=FALSE}
+chem_data <- data %>%
+  filter(compName == "naam_van_chemicalie")
+```
+
+## Stap 3: model fitten
+
+```{r eval=FALSE}
+model <- drm(RawData_norm ~ compConcentration, data = chem_data, fct = LL.4())
+```
+
+## Stap 4: model samenvatten
+
+```{r eval=FALSE}
+summary(model)
+```
+
+## Stap 5: dose-response curve plotten
+
+```{r eval=FALSE}
+plot(model)
+points(chem_data$compConcentration, chem_data$RawData_norm)
+```
+
+## Stap 6: IC50 berekenen
+
+```{r eval=FALSE}
+ED(model, 50, interval = "delta")
+```
+
+## Stap 7: herhalen voor andere chemicaliën
+
+Dezelfde stappen kunnen worden herhaald voor andere chemicaliën, zodat de IC50-waarden onderling vergeleken kunnen worden.
+
+
+# Conclusie
+
+In deze analyse is de dataset ingelezen, gecontroleerd op correcte datatypes en gevisualiseerd met scatterplots. Daarna zijn de meetwaarden genormaliseerd ten opzichte van de negatieve controle, zodat de resultaten beter vergelijkbaar zijn.
+
+Een logische vervolgstap is het uitvoeren van een dose-response analyse met een log-logistisch model, waarmee per chemicalie een IC50 kan worden geschat.
