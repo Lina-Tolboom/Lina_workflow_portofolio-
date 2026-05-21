@@ -1,0 +1,49 @@
+---
+title: "Getting started with simpleTranslateR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with simpleTranslateR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## Introduction
+
+`simpleTranslateR` is a small R package that can be used for translating simple words and short sentences in Dutch, English and Spanish.
+
+## Available languages
+
+```{r}
+library(simpleTranslateR)
+
+available_languages()
+```
+
+## Translate one word
+
+```{r}
+translate_word("hond", from = "nl", to = "en")
+```
+
+## Translate a sentence
+
+```{r}
+translate_sentence("ik hou van koffie", from = "nl", to = "en")
+```
+
+## Add a translation
+
+```{r}
+dict <- data.frame(
+  nl = "hond",
+  en = "dog",
+  es = "perro",
+  stringsAsFactors = FALSE
+)
+
+add_translation(dict, "boek", "book", "libro")
+```

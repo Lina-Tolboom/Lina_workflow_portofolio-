@@ -1,0 +1,14 @@
+Package: simpleTranslateR
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Lina", "Tolboom", , "tolboom.lina@gmail.com", role = c("aut", "cre"))
+Description: This package provides simple functions to translate words and short sentences between Dutch, English and Spanish using a small built-in dictionary.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
