@@ -1,0 +1,90 @@
+---
+title: "covid_report.Rmd"
+output: html_document
+params:
+  land: "Netherlands"
+  jaar: 2021
+  maanden: !r c(1, 2, 3)
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+## Inleiding
+
+Dit rapport laat het aantal gemelde COVID-19 gevallen en COVID-19 gerelateerde sterfgevallen zien voor:
+
+- Land: `r params$land`
+- Jaar: `r params$jaar`
+- Maanden: `r paste(params$maanden, collapse = ", ")`
+
+De data is afkomstig van het European Centre for Disease Prevention and Control.
+
+```{r data-inladen}
+covid_data <- read.csv(
+  "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv",
+  na.strings = "",
+  fileEncoding = "UTF-8-BOM"
+)
+```
+
+```{r data-controleren}
+names(covid_data)
+```
+
+```{r data-bewerken}
+covid_clean <- covid_data %>%
+  mutate(
+    dateRep = as.Date(dateRep),
+    year = year(dateRep),
+    month = month(dateRep)
+  ) %>%
+  filter(
+    countriesAndTerritories == params$land,
+    year == params$jaar,
+    month %in% params$maanden
+  )
+```
+
+## Aantal COVID-19 gevallen
+
+```{r grafiek-gevallen}
+ggplot(covid_clean, aes(x = dateRep, y = cases)) +
+  geom_line() +
+  labs(
+    title = paste("COVID-19 gevallen in", params$land),
+    subtitle = paste("Jaar:", params$jaar, "| Maanden:", paste(params$maanden, collapse = ", ")),
+    x = "Datum",
+    y = "Aantal gevallen"
+  ) +
+  theme_minimal()
+```
+
+## Aantal COVID-19 gerelateerde sterfgevallen
+
+```{r grafiek-sterfgevallen}
+ggplot(covid_clean, aes(x = dateRep, y = deaths)) +
+  geom_line() +
+  labs(
+    title = paste("COVID-19 gerelateerde sterfgevallen in", params$land),
+    subtitle = paste("Jaar:", params$jaar, "| Maanden:", paste(params$maanden, collapse = ", ")),
+    x = "Datum",
+    y = "Aantal sterfgevallen"
+  ) +
+  theme_minimal()
+```
+
+## Samenvatting
+
+```{r samenvatting}
+totaal_cases <- sum(covid_clean$cases, na.rm = TRUE)
+totaal_deaths <- sum(covid_clean$deaths, na.rm = TRUE)
+
+cat("In", params$land, "waren er in de geselecteerde periode",
+    totaal_cases, "gemelde COVID-19 gevallen en",
+    totaal_deaths, "COVID-19 gerelateerde sterfgevallen.")
+```

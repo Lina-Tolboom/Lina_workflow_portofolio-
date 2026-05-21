@@ -1,3 +1,54 @@
 # Opdracht 8: Geparametrizeerde R markdown
 
-## hier komt opdracht 8
+Voor deze opdracht heb ik een geparametrizeerd R Markdown-rapport gemaakt voor COVID-19 data in Europa. De data is afkomstig van het European Centre for Disease Prevention and Control. In het rapport kunnen drie parameters worden aangepast: het land, het jaar en de maanden waarover het rapport gaat.
+
+## Parameters
+
+Het rapport bevat de volgende parameters:
+
+- land: het land waarover het rapport gaat;
+- jaar: het jaar van de metingen;
+- maanden: de maanden die in het rapport worden meegenomen.
+
+Een voorbeeld van de parameters in de YAML-header is:
+
+```{r, eval=FALSE}
+params:
+  land: "Netherlands"
+  jaar: 2021
+  maanden: !r c(1, 2, 3)
+```
+
+## Data inladen
+
+De COVID-19 data wordt rechtstreeks ingeladen vanaf de website van het ECDC:
+
+```{r, eval=FALSE}
+covid_data <- read.csv(
+  "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv",
+  na.strings = "",
+  fileEncoding = "UTF-8-BOM"
+)
+```
+
+## Rapport genereren
+
+Het rapport kan met verschillende waarden voor de parameters worden gegenereerd. Bijvoorbeeld:
+
+```{r, eval=FALSE}
+rmarkdown::render(
+  "covid_report.Rmd",
+  params = list(
+    land = "Netherlands",
+    jaar = 2021,
+    maanden = c(1, 2, 3)
+  ),
+  output_file = "covid_Netherlands_2021_jan_mrt.html"
+)
+```
+
+## Resultaat
+
+Het rapport bevat twee grafieken. De eerste grafiek laat het aantal COVID-19 gevallen zien voor het gekozen land, jaar en de gekozen maanden. De tweede grafiek laat het aantal COVID-19 gerelateerde sterfgevallen zien voor dezelfde selectie.
+
+Om te laten zien dat het rapport werkt, heb ik meerdere versies van het rapport gegenereerd met verschillende parameters, bijvoorbeeld voor Nederland, Duitsland en België. Deze zijn te vinden in de map resultaten.

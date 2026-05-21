@@ -54,71 +54,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
-<style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
   
@@ -214,7 +149,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html"><i class="fa fa-check"></i>Opdracht 8: Geparametrizeerde R markdown</a>
 <ul>
-<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#hier-komt-opdracht-8"><i class="fa fa-check"></i>hier komt opdracht 8</a></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#parameters"><i class="fa fa-check"></i>Parameters</a></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#data-inladen"><i class="fa fa-check"></i>Data inladen</a></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#rapport-genereren"><i class="fa fa-check"></i>Rapport genereren</a></li>
+<li class="chapter" data-level="" data-path="opdracht-8-geparametrizeerde-r-markdown.html"><a href="opdracht-8-geparametrizeerde-r-markdown.html#resultaat"><i class="fa fa-check"></i>Resultaat</a></li>
 </ul></li>
 </ul>
 
@@ -238,9 +176,6 @@ div.csl-indent {
 <p>Voor de RNA-sequencing formatieve opdracht uit de DAUR2 module heb ik een mapstructuur gemaakt volgens de Guerilla Analytics regels voor data management.</p>
 <div id="mapstructuur" class="section level2 hasAnchor">
 <h2>Mapstructuur<a href="opdracht-3-data-management-rna-seq.html#mapstructuur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="opdracht-3-data-management-rna-seq.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb1-2"><a href="opdracht-3-data-management-rna-seq.html#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="opdracht-3-data-management-rna-seq.html#cb1-3" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;data/rnaseq_data_management&quot;</span>)</span></code></pre></div>
 <pre><code>## data/rnaseq_data_management
 ## ├── data
 ## │   ├── counts
@@ -260,9 +195,6 @@ div.csl-indent {
 ## │   └── SRR7866702_2_fastqc.html
 ## └── scripts
 ##     └── fastq.sh</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="opdracht-3-data-management-rna-seq.html#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">readLines</span>(<span class="st">&quot;data/rnaseq_data_management/docs/README_opdracht03.md&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in readLines(&quot;data/rnaseq_data_management/docs/README_opdracht03.md&quot;): incomplete final
-## line found on &#39;data/rnaseq_data_management/docs/README_opdracht03.md&#39;</code></pre>
 <pre><code>## # README RNA-seq data management
 ## 
 ## Deze mapstructuur is gemaakt volgens de Guerilla Analytics principes voor data management voor 
@@ -289,8 +221,6 @@ div.csl-indent {
 </div>
 <div id="mapstructuur-van-de-repository" class="section level2 hasAnchor">
 <h2>Mapstructuur van de repository<a href="opdracht-3-data-management-rna-seq.html#mapstructuur-van-de-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="opdracht-3-data-management-rna-seq.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(fs)</span>
-<span id="cb6-2"><a href="opdracht-3-data-management-rna-seq.html#cb6-2" tabindex="-1"></a><span class="fu">dir_tree</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
 <pre><code>## .
 ## ├── 01_cv_en_toekomstplannen.Rmd
 ## ├── 02_vrije_opdracht.Rmd
@@ -305,6 +235,7 @@ div.csl-indent {
 ## ├── _book
 ## ├── _bookdown.yml
 ## ├── _output.yml
+## ├── covid_report.Rmd
 ## ├── data
 ## │   ├── celegans_data.csv
 ## │   └── rnaseq_data_management
@@ -328,6 +259,38 @@ div.csl-indent {
 ## │           └── fastq.sh
 ## ├── docs
 ## ├── index.Rmd
+## ├── libs
+## │   ├── anchor-sections-1.1.0
+## │   │   ├── anchor-sections-hash.css
+## │   │   ├── anchor-sections-icon.css
+## │   │   ├── anchor-sections-symbol.css
+## │   │   ├── anchor-sections.css
+## │   │   └── anchor-sections.js
+## │   ├── gitbook-2.6.7
+## │   │   ├── css
+## │   │   │   ├── fontawesome
+## │   │   │   │   └── fontawesome-webfont.ttf
+## │   │   │   ├── plugin-bookdown.css
+## │   │   │   ├── plugin-clipboard.css
+## │   │   │   ├── plugin-fontsettings.css
+## │   │   │   ├── plugin-highlight.css
+## │   │   │   ├── plugin-search.css
+## │   │   │   ├── plugin-table.css
+## │   │   │   └── style.css
+## │   │   └── js
+## │   │       ├── app.min.js
+## │   │       ├── clipboard.min.js
+## │   │       ├── jquery.highlight.js
+## │   │       ├── lunr.js
+## │   │       ├── plugin-bookdown.js
+## │   │       ├── plugin-clipboard.js
+## │   │       ├── plugin-fontsettings.js
+## │   │       ├── plugin-search.js
+## │   │       └── plugin-sharing.js
+## │   └── jquery-3.6.0
+## │       ├── jquery-3.6.0.js
+## │       ├── jquery-3.6.0.min.js
+## │       └── jquery-3.6.0.min.map
 ## ├── portfolio.Rmd
 ## ├── portfolio_files
 ## │   └── figure-html
@@ -335,6 +298,13 @@ div.csl-indent {
 ## │       └── unnamed-chunk-7-1.png
 ## ├── references.bib
 ## ├── results
+## │   ├── 404.html
+## │   ├── covid_Netherlands_2021_jan_mrt.html
+## │   └── covid_Netherlands_2021_jan_mrt_files
+## │       └── figure-html
+## │           ├── grafiek-gevallen-1.png
+## │           ├── grafiek-sterfgevallen-1.png
+## │           └── pressure-1.png
 ## └── simpleTranslateR
 ##     ├── DESCRIPTION
 ##     ├── LICENSE
@@ -353,8 +323,6 @@ div.csl-indent {
 ##     ├── simpleTranslateR.Rproj
 ##     └── vignettes
 ##         └── getting-started.Rmd</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="opdracht-3-data-management-rna-seq.html#cb8-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">readLines</span>(<span class="st">&quot;README.md&quot;</span>), <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in readLines(&quot;README.md&quot;): incomplete final line found on &#39;README.md&#39;</code></pre>
 <pre><code>## # Lina_workflow_portofolio
 ## Dit is het portofolio van Lina Tolboom
 ## 
@@ -373,7 +341,6 @@ div.csl-indent {
 ## - 06_R_package.Rmd: pagina over gemaakte R package
 ## - 07_Introductie_projecticum.Rmd: een introductiepagina over het project dat ik ga doen
 ## - 08_geparametrizeerde_Rmarkdown.Rmd: pagina over de parametrizeerende opdracht
-## - 09_referenties.Rmd: pagina voor de gebruikte referenties van pagina 7
 ## - _bookdown.yml en _output.yml: configuratiebestanden voor bookdown
 ## - _book/: gebouwde website output
 ## - data/: data-gerelateerde mappen en bestanden
