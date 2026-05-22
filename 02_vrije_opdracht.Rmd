@@ -10,14 +10,8 @@ Daarnaast sluit R Shiny goed aan bij de cursus. Tijdens mijn project leer ik dit
 
 ## Doel van de opdracht
 
-Het doel van mijn vrije opdracht is om een eigen interactieve R Shiny-applicatie te ontwikkelen waarin biologische data kunnen worden verkregen. De applicatie moet er voor zorgen dat gebruikers zelf een selectie kunnen maken en er vervolgens automatisch passende grafieken en/of samenvattingen worden weergegeven.
+Het doel van mijn vrije opdracht is om een eigen R Shiny-applicatie te maken waarmee geneesmiddel responsdata van kankercellen kunnen worden verkregen. In de applicatie kiest de gebruiker een kankerbestrijdingsmiddel en hierna zal automatisch een grafiek verschijnen met de IC50-waarden van de verschillende cellen voor deze behandeling.
 
-Met deze opdracht wil ik leren:
-
-- hoe een Shiny-app is opgebouwd
-- hoe gebruikersinput gekoppeld kan worden aan een dataset
-- hoe grafieken en resultaten automatisch veranderen op basis van de gekozen input
-- hoe biologische data op een overzichtelijke en interactieve manier gepresenteerd kunnen worden
 
 ## Planning
 
@@ -34,17 +28,15 @@ Met deze opdracht wil ik leren:
 
 ## Geplande uitwerking
 
-## Geplande uitwerking
+Als uitwerking van mijn vrije opdracht maak ik een interactieve R Shiny-applicatie waarin een gebruiker een geneesmiddel kan kiezen. De applicatie laat dan vervolgens zien hoe kankercellen reageren op verschillende concentraties van dat bepaalde geneesmiddel. Hiervoor wil ik gebruikmaken van geneesmiddeldata uit de Genomics of Drug Sensitivity in Cancer-dataset. De GDSC-dataset bevat gegevens over de gevoeligheid van verschillende kankercellijnen voor anti-kankergeneesmiddelen. Daarom is deze dataset goed voor mijn applicatie.
 
-Als uitwerking van mijn vrije opdracht maak ik een interactieve R Shiny-applicatie waarin een gebruiker een geneesmiddel kan selecteren. De applicatie laat dan vervolgens zien hoe kankercellen reageren op verschillende concentraties van dat bepaalde geneesmiddel. Hiervoor wil ik gebruikmaken van geneesmiddeldata uit de Genomics of Drug Sensitivity in Cancer-dataset.
+Voor de visualisatie wil ik gebruik gaan maken van de IC50-waarden. Dit geeft aan welke concentratie van een geneesmiddel nodig is om een remmend effect te hebben op bijvoorbeeld de kankercel. Een lagere IC50-waarde geeft aan dat er een hoge gevoeligheid is op de cellen. 
 
-De GDSC-dataset bevat gegevens over de gevoeligheid van verschillende kankercellijnen voor anti-kankergeneesmiddelen. Daarom is deze dataset goed voor mijn applicatie.
-
-In de applicatie wil ik de volgende onderdelen gaan proberen te verwerken:
+In de applicatie wil ik de volgende onderdelen gaan proberen te maken:
 
 - een keuzemenu waarin de gebruiker een geneesmiddel selecteert
-- een grafiek waarin de respons van cellen op het gekozen geneesmiddel zichtbaar is gemaakt
-- een korte toelichting bij de resultaten
+- een grafiek waarin de IC50-waarden van cellen op het gekozen geneesmiddel zichtbaar is 
+- een korte uitleg bij de resultaten
 
 
 
