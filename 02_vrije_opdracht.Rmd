@@ -1,4 +1,49 @@
 # Opdracht 2: Vrije opdracht
 
-## in dit bestand word de vrije opdracht gemaakt
+## Gekozen skill: R Shiny
 
+Voor de vrije opdracht heb ik gekozen om te leren werken met R Shiny. Met R Shiny kunnen interactieve webapplicaties worden gemaakt vanuit R. In plaats van alleen statische grafieken of tabellen te tonen, kan een gebruiker zelf keuzes maken, bijvoorbeeld door een variabele, groep of meetmoment te selecteren. De resultaten worden daarna automatisch aangepast in de applicatie.
+
+Deze skill sluit aan bij mijn toekomstplannen. Mijn stage wil ik bij een consultancy bedrijf in Barcalona gaan lopen. Bas gaf mij de goede tip om dan te kijken naar R shiny. Dit heb ik gedaan en het stage bedrijf is ook super enthousiast dat ik me hier meer in ga verdiepen. Dit komt omdat binnen deze stage het belangrijk is om analyses niet alleen technisch goed uit te voeren, maar de resultaten ook begrijpelijk te presenteren aan mensen die niet dagelijks met R werken. Een interactieve applicatie kan daarbij helpen, omdat gebruikers zelf gegevens kunnen selecteren en resultaten overzichtelijk kunnen bekijken.
+
+Daarnaast sluit R Shiny goed aan bij de cursus. Tijdens mijn project leer ik dit niet maar sommige andere wel. Hierdoor ga ik goed leren hoe ik de resultaten van een analyse interactief en toegankelijk kan presenteren.
+
+## Doel van de opdracht
+
+Het doel van mijn vrije opdracht is om een eigen interactieve R Shiny-applicatie te ontwikkelen waarin biologische data kunnen worden verkregen. De applicatie moet er voor zorgen dat gebruikers zelf een selectie kunnen maken en er vervolgens automatisch passende grafieken en/of samenvattingen worden weergegeven.
+
+Met deze opdracht wil ik leren:
+
+- hoe een Shiny-app is opgebouwd
+- hoe gebruikersinput gekoppeld kan worden aan een dataset
+- hoe grafieken en resultaten automatisch veranderen op basis van de gekozen input
+- hoe biologische data op een overzichtelijke en interactieve manier gepresenteerd kunnen worden
+
+## Planning
+
+- Bedenken waar ik me in wil verdiepen voor de vrije opdracht --> 2 uur
+- Er achter komen wat R Shiny exact is en welke biologische dataset geschikt is --> 3 uur
+- Les volgen die in de projecticum reader staat voor het eerst begrip --> 3 uur
+- Bepalen wat ik voor mijn eigen applicatie nodig heb --> 3 uur 
+- Data voorbereiden en controleren --> 4 uur 
+- De applicatie bouwen --> 10 uur 
+- Testen of verschillende selecties werken en de foute oplossen --> 4 uur 
+- Portofolio bijwerken en de resultaten zichtbaar maken --> 4 uur
+
+
+
+## Geplande uitwerking
+
+Als bewijs dat ik de skill heb geleerd, maak ik een eigen interactieve Shiny-applicatie met een biologische dataset. In deze applicatie kan een gebruiker zelf keuzes maken, waarna de weergegeven resultaten automatisch worden aangepast. Hiermee toon ik aan dat ik niet alleen een tutorial heb gevolgd, maar R Shiny zelfstandig heb toegepast op een eigen biologische toepassing.
+
+De uiteindelijke uitwerking bevat:
+
+- een beschrijving van de gebruikte dataset;
+- een uitleg van de functies van de applicatie;
+- een schermopname van de werkende app;
+- een verwijzing naar de zelfgeschreven code;
+- een korte reflectie op wat ik heb geleerd.
+
+## Uitwerking van de applicatie
+
+*Dit onderdeel wordt aangevuld nadat de Shiny-applicatie is gebouwd en getest.*
