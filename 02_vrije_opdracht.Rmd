@@ -34,15 +34,19 @@ Met deze opdracht wil ik leren:
 
 ## Geplande uitwerking
 
-Als bewijs dat ik de skill heb geleerd, maak ik een eigen interactieve Shiny-applicatie met een biologische dataset. In deze applicatie kan een gebruiker zelf keuzes maken, waarna de weergegeven resultaten automatisch worden aangepast. Hiermee toon ik aan dat ik niet alleen een tutorial heb gevolgd, maar R Shiny zelfstandig heb toegepast op een eigen biologische toepassing.
+## Geplande uitwerking
 
-De uiteindelijke uitwerking bevat:
+Als uitwerking van mijn vrije opdracht maak ik een interactieve R Shiny-applicatie waarin een gebruiker een geneesmiddel kan selecteren. De applicatie laat dan vervolgens zien hoe kankercellen reageren op verschillende concentraties van dat bepaalde geneesmiddel. Hiervoor wil ik gebruikmaken van geneesmiddeldata uit de Genomics of Drug Sensitivity in Cancer-dataset.
 
-- een beschrijving van de gebruikte dataset;
-- een uitleg van de functies van de applicatie;
-- een schermopname van de werkende app;
-- een verwijzing naar de zelfgeschreven code;
-- een korte reflectie op wat ik heb geleerd.
+De GDSC-dataset bevat gegevens over de gevoeligheid van verschillende kankercellijnen voor anti-kankergeneesmiddelen. Daarom is deze dataset goed voor mijn applicatie.
+
+In de applicatie wil ik de volgende onderdelen gaan proberen te verwerken:
+
+- een keuzemenu waarin de gebruiker een geneesmiddel selecteert
+- een grafiek waarin de respons van cellen op het gekozen geneesmiddel zichtbaar is gemaakt
+- een korte toelichting bij de resultaten
+
+
 
 ## Uitwerking van de applicatie
 
