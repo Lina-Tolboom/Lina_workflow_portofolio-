@@ -23,7 +23,7 @@
 <meta name="author" content="Lina Tolboom" />
 
 
-<meta name="date" content="2026-05-22" />
+<meta name="date" content="2026-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,71 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -110,6 +175,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#planning"><i class="fa fa-check"></i>Planning</a></li>
 <li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#geplande-uitwerking"><i class="fa fa-check"></i>Geplande uitwerking</a></li>
 <li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#uitwerking-van-de-applicatie"><i class="fa fa-check"></i>Uitwerking van de applicatie</a></li>
+<li class="chapter" data-level="" data-path="opdracht-2-vrije-opdracht.html"><a href="opdracht-2-vrije-opdracht.html#demonstratie-van-de-shiny-app"><i class="fa fa-check"></i>Demonstratie van de Shiny-app</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="opdracht-3-data-management-rna-seq.html"><a href="opdracht-3-data-management-rna-seq.html"><i class="fa fa-check"></i>Opdracht 3: Data management RNA-seq</a>
 <ul>
@@ -213,7 +279,16 @@ div.csl-indent {
 </div>
 <div id="uitwerking-van-de-applicatie" class="section level2 hasAnchor">
 <h2>Uitwerking van de applicatie<a href="opdracht-2-vrije-opdracht.html#uitwerking-van-de-applicatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Dit onderdeel wordt aangevuld nadat de Shiny-applicatie is gebouwd en getest.</em></p>
+<p>Voor de uitwerking van de vrije opdracht heb ik een R Shiny-applicatie gemaakt waarmee geneesmiddelresponsdata van kankercellijnen kan worden verkregen. De app maakt gebruik van gegevens uit de GDSC2-dataset. Deze dataset bevat metingen van de gevoeligheid van verschillende kankercellijnen voor verschillende geneesmiddelen.</p>
+<p>In de applicatie kan de gebruiker zelf een geneesmiddel kiezen, vervolgens laat de applicatie de 20 kankercellijnen met de laagste LN_IC50-waarde voor het geneesmiddel zien. Een lagere LN_IC50-waarde betekent dat er een grotere gevoeligheid van de cellijn is voor deze behandeling.</p>
+</div>
+<div id="demonstratie-van-de-shiny-app" class="section level2 hasAnchor">
+<h2>Demonstratie van de Shiny-app<a href="opdracht-2-vrije-opdracht.html#demonstratie-van-de-shiny-app" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In schermopname hieronder is te zien dat de gebruiker een geneesmiddel kan selecteren en dat de grafiek dan automatisch wordt aangepast naar deze keuze.</p>
+<video width="850" controls>
+<source src="media/shiny_drug_response_demo.mov" type="video/quicktime">
+<p>Je browser ondersteunt deze video niet.
+</video></p>
 
 </div>
 </div>

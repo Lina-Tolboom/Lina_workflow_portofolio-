@@ -42,4 +42,15 @@ In de applicatie wil ik de volgende onderdelen gaan proberen te maken:
 
 ## Uitwerking van de applicatie
 
-*Dit onderdeel wordt aangevuld nadat de Shiny-applicatie is gebouwd en getest.*
+Voor de uitwerking van de vrije opdracht heb ik een R Shiny-applicatie gemaakt waarmee geneesmiddelresponsdata van kankercellijnen kan worden verkregen. De app maakt gebruik van gegevens uit de GDSC2-dataset. Deze dataset bevat metingen van de gevoeligheid van verschillende kankercellijnen voor verschillende geneesmiddelen.
+
+In de applicatie kan de gebruiker zelf een geneesmiddel kiezen, vervolgens laat de applicatie de 20 kankercellijnen met de laagste LN_IC50-waarde voor het geneesmiddel zien. Een lagere LN_IC50-waarde betekent dat er een grotere gevoeligheid van de cellijn is voor deze behandeling. 
+
+## Demonstratie van de Shiny-app
+
+In schermopname hieronder is te zien dat de gebruiker een geneesmiddel kan selecteren en dat de grafiek dan automatisch wordt aangepast naar deze keuze.
+
+<video width="850" controls>
+  <source src="media/shiny_drug_response_demo.mov" type="video/quicktime">
+  Je browser ondersteunt deze video niet.
+</video>
