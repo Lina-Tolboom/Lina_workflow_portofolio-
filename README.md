@@ -21,6 +21,7 @@ Deze repository is georganiseerd volgens de Guerilla Analytics principes voor da
 - data/: data-gerelateerde mappen en bestanden
 - results/: outputbestanden zoals html-bestanden
 - docs/: documentatie
+- media/: video voor vrije opdracht
 - README.md: beschrijving van de repository
 
 ## Toelichting
